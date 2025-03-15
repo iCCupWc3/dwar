@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мониторинг цен</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        body {
+            background: url('https://vkplay.ru/pre_0x1126_resize/hotbox/content_files/news/2022/06/16/edee981c818e421094d5cac74ec15855.jpg?quality=85&format=webp') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        input, button {
+            font-family: 'Poppins', sans-serif;
+            background: #444;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #666;
+        }
+        canvas {
+            border: 2px solid #fff;
+            background: rgba(0, 0, 0, 0.6);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Мониторинг цен dwar</h1>
+    <input type="text" id="productName" placeholder="Название товара">
+    <input type="number" id="productPrice" placeholder="Цена">
+    <button id="addPrice">Добавить</button>
+    <button id="clearData">Очистить статистику</button>
+    <canvas id="priceChart"></canvas>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const ctx = document.getElementById('priceChart').getContext('2d');
+            const storageKey = 'priceMonitorData';
+            let chartData = JSON.parse(localStorage.getItem(storageKey)) || { labels: [], datasets: [] };
+            const colors = {};
+
+            const priceChart = new Chart(ctx, {
+                type: 'line',
+                data: chartData,
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: { title: { display: true, text: 'Время' } },
+                        y: { title: { display: true, text: 'Цена' } }
+                    }
+                }
+            });
+
+            function getRandomColor() {
+                return `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
+            }
+
+            function updateChart(product, price) {
+                const now = new Date().toLocaleString();
+                if (!chartData.labels.includes(now)) {
+                    chartData.labels.push(now);
+                }
+
+                if (!colors[product]) {
+                    colors[product] = getRandomColor();
+                }
+
+                let dataset = chartData.datasets.find(d => d.label === product);
+                if (!dataset) {
+                    dataset = {
+                        label: product,
+                        borderColor: colors[product],
+                        backgroundColor: colors[product],
+                        data: []
+                    };
+                    chartData.datasets.push(dataset);
+                }
+                dataset.data.push(price);
+
+                localStorage.setItem(storageKey, JSON.stringify(chartData));
+                priceChart.update();
+            }
+
+            document.getElementById('addPrice').addEventListener('click', () => {
+                const productName = document.getElementById('productName').value;
+                const productPrice = parseFloat(document.getElementById('productPrice').value);
+                if (productName && !isNaN(productPrice)) {
+                    updateChart(productName, productPrice);
+                }
+            });
+
+            document.getElementById('clearData').addEventListener('click', () => {
+                localStorage.removeItem(storageKey);
+                chartData = { labels: [], datasets: [] };
+                priceChart.data = chartData;
+                priceChart.update();
+            });
+        });
+    </script>
+</body>
+</html>
