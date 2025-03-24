@@ -756,62 +756,6 @@
             }
 
             resultsDiv.appendChild(container);
-        }
-
-        function displayMoneyResults(results, title) {
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = `<h2 style="font-weight: bold;">${title}</h2>`; // Заголовок жирным
-            const div = document.createElement('div');
-            div.className = 'results-column';
-            div.innerHTML = results;
-            resultsDiv.appendChild(div);
-            
-            // Обновление рекордов денег и истории
-            updateMoneyRecords(results);
-            addHistoryEntry('money', results);
-        }
-        
-        // Обновленная функция displayResults для учета рекордов и истории
-        function displayResults(results, title, includeImages = false) {
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = `<h2 style="font-weight: bold;">${title}</h2>`; // Заголовок жирным
-            const container = document.createElement('div');
-            container.style.display = 'flex';
-            container.style.flexWrap = 'wrap';
-            
-            let row = document.createElement('div');
-            row.style.display = 'flex';
-            row.style.width = '100%';
-
-            let count = 0;
-
-            for (const [key, value] of Object.entries(results)) {
-                const itemDiv = document.createElement('div');
-                itemDiv.style.flex = '1 0 30%'; // Занимает 30% ширины, чтобы вмещать 3 предмета в строке
-                itemDiv.style.boxSizing = 'border-box';
-                itemDiv.style.padding = '10px'; // Отступы для визуального разделения
-                const imageSize = title === 'Результаты нападений:' ? '150px' : '50px'; // Условие для размера изображения
-                itemDiv.innerHTML = `${includeImages ? `<img src="images/${key}.gif" class="item-image" style="width: ${imageSize}; height: ${imageSize};" alt="${key}">` : ''}
-                                itemDiv.innerHTML = `${includeImages ? `<img src="images/${key}.gif" class="item-image" style="width: ${imageSize}; height: ${imageSize};" alt="${key}">` : ''} ${key}: ${value}`;
-                
-                row.appendChild(itemDiv);
-                count++;
-
-                // Если добавлено 3 предмета, добавляем строку в контейнер и создаем новую
-                if (count % 3 === 0) {
-                    container.appendChild(row);
-                    row = document.createElement('div');
-                    row.style.display = 'flex';
-                    row.style.width = '100%';
-                }
-            }
-
-            // Добавляем оставшиеся элементы, если они есть
-            if (count % 3 !== 0) {
-                container.appendChild(row);
-            }
-
-            resultsDiv.appendChild(container);
             
             // Если это результаты нападений, обновляем рекорды
             if (title === 'Результаты нападений:') {
@@ -846,7 +790,7 @@
             }
         }
         
-        // Функция для обновления рекордов денег
+                // Функция для обновления рекордов денег
         function updateMoneyRecords(resultHTML) {
             // Извлечение итогового значения меди из HTML
             const totalMatch = resultHTML.match(/Итого: (\d+) .+?, (\d+) .+?, (\d+)/);
@@ -1494,3 +1438,4 @@
     </script>
 </body>
 </html>
+       
