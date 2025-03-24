@@ -453,8 +453,9 @@
     </div>
     <div id="info" class="tab-content">
         <h2>Информация</h2>
-        <p>Здесь вы можете добавить любую информацию, которую хотите отобразить.</p>
-        <p>Например, это может быть описание вашего проекта, инструкции по использованию или любые другие данные.</p>
+        <input type="file" id="fileInput" accept=".txt" />
+        <button onclick="loadInfo()">Загрузить информацию</button>
+        <div id="infoContent" style="margin-top: 20px;"></div>
     </div>
     <div id="results"></div>
 
@@ -790,12 +791,13 @@
                 itemDiv.style.boxSizing = 'border-box';
                 itemDiv.style.padding = '10px'; // Отступы для визуального разделения
                 const imageSize = title === 'Результаты нападений:' ? '150px' : '50px'; // Условие для размера изображения
-                itemDiv.innerHTML = `${includeImages ? `<img src="images/${key}.gif" class="item-image" style="width: ${imageSize}; height: ${imageSize};" alt="${key}">` : ''} ${key}: ${value}`;
+                itemDiv.innerHTML = `${includeImages ? `<img src="images/${key}.gif" class="item-image" style="width: ${imageSize}; height: ${imageSize};" alt="${key}">` : ''}
+                                itemDiv.innerHTML = `${includeImages ? `<img src="images/${key}.gif" class="item-image" style="width: ${imageSize}; height: ${imageSize};" alt="${key}">` : ''} ${key}: ${value}`;
                 
                 row.appendChild(itemDiv);
                 count++;
 
-                                // Если добавлено 3 предмета, добавляем строку в контейнер и создаем новую
+                // Если добавлено 3 предмета, добавляем строку в контейнер и создаем новую
                 if (count % 3 === 0) {
                     container.appendChild(row);
                     row = document.createElement('div');
@@ -1466,6 +1468,28 @@
                 
                 alert('Вся статистика успешно сброшена.');
             }
+        }
+
+        // Функция для загрузки информации из файла
+        function loadInfo() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('Пожалуйста, выберите файл.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const content = event.target.result;
+                document.getElementById('infoContent').innerText = content;
+            };
+            reader.onerror = function() {
+                alert('Ошибка при чтении файла.');
+            };
+
+            reader.readAsText(file);
         }
     </script>
 </body>
