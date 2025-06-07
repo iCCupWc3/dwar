@@ -1,0 +1,3563 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логозавр:)</title>
+    <link rel="icon" type="image/png" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iIzRhOTBlMiIvPgo8cGF0aCBkPSJNMTYgMjZjLTcuNzMyIDAtMTQtMy4xMzQtMTQtN3M2LjI2OC03IDE0LTcgMTQgMy4xMzQgMTQgN3MtNi4yNjggNy0xNCA3em0wLTEyYy01LjUyMyAwLTEwIDIuMjM5LTEwIDVzNC40NzcgNSAxMCA1IDEwLTIuMjM5IDEwLTUtNC40NzctNS0xMC01eiIgZmlsbD0iI2ZmZiIvPgo8cGF0aCBkPSJNMTAgMTVjMC0xLjEwNS45LTIgMi0yaDhjMS4xIDAgMiAuODk1IDIgMnYyYzAgMS4xMDUtLjkgMi0yIDJoLThjLTEuMSAwLTItLjg5NS0yLTJ2LTJ6IiBmaWxsPSIjZmZmIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iMTYiIHI9IjEiIGZpbGw9IiM0YTkwZTIiLz4KPGNpcmNsZSBjeD0iMjAiIGN5PSIxNiIgcj0iMSIgZmlsbD0iIzRhOTBlMiIvPgo8L3N2Zz4=">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Cinzel:wght@700&family=Montserrat:wght@400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0; /* Убираем отступы */
+            background: linear-gradient(135deg, #f4f4f9, #e0e7ff);
+            color: #333;
+        }
+        .header {
+            width: 100%;
+            height: auto; /* Автоматическая высота */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+        }
+        .header img {
+            max-width: 500px; /* Максимальная ширина */
+            max-height: 300px; /* Максимальная высота */
+            width: auto;
+            height: auto;
+            object-fit: contain; /* Сохраняет пропорции и показывает полностью */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #4a90e2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            margin-top: 20px; /* Отступ сверху для заголовка */
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(74, 144, 226, 0.1);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tab {
+            padding: 15px 25px;
+            margin: 0 3px;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+            color: #4a90e2;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
+        }
+        
+        .tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: left 0.6s;
+        }
+        
+        .tab:hover::before {
+            left: 100%;
+        }
+        
+        .tab:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.4);
+            border-color: rgba(74, 144, 226, 0.5);
+            background: linear-gradient(145deg, rgba(255,255,255,1), rgba(240,248,255,0.9));
+        }
+        
+        .tab i {
+            font-size: 1.3em;
+            transition: all 0.3s ease;
+        }
+        
+        .tab:hover i {
+            transform: rotate(10deg) scale(1.2);
+            text-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+        }
+        
+        .tab.active {
+            background: linear-gradient(145deg, #4a90e2, #357ab7, #2c5aa0);
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.6);
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.3);
+            animation: activeGlow 2s ease-in-out infinite alternate;
+        }
+        
+        .tab.active i {
+            color: #fff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes activeGlow {
+            0% {
+                box-shadow: 0 8px 25px rgba(74, 144, 226, 0.6);
+            }
+            100% {
+                box-shadow: 0 12px 35px rgba(74, 144, 226, 0.8);
+            }
+        }
+        
+        @keyframes iconPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 2px solid #4a90e2;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+        }
+        textarea:focus {
+            border-color: #357ab7;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4a90e2;
+            color: white;
+            font-size: 16px;
+            cursor: pointer; /* Убедитесь, что курсор указывает на кнопки */
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-secondary {
+            background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(240,248,255,0.8));
+            color: #4a90e2;
+            border: 2px solid #4a90e2;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 144, 226, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .btn-secondary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(145deg, #4a90e2, #357ab7);
+            color: white;
+            border-color: #357ab7;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
+        }
+        
+        .btn-secondary:hover i {
+            transform: rotate(10deg) scale(1.1);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        .input-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        button:hover {
+            background-color: #357ab7;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        button:active {
+            transform: scale(0.95);
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2) inset;
+        }
+        #results {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #4a90e2;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-in-out;
+            font-family: 'Cinzel', serif;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+        .results-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .results-column div {
+            padding: 10px;
+            border: 2px solid #4a90e2;
+            border-radius: 5px;
+            background-color: #fff;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            animation: slideIn 0.5s ease-in-out;
+        }
+        .monster-image {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+        }
+        .coin {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            animation: spin 3s linear infinite;
+            display: inline-block;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotateY(0deg); }
+            50% { transform: rotateY(180deg); }
+            100% { transform: rotateY(360deg); }
+        }
+        .item-image {
+            width: 50px; /* Изменено на 50px */
+            height: 50px; /* Изменено на 50px */
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .checkbox-group input {
+            margin: 0;
+        }
+        .add-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .add-item input {
+            padding: 10px;
+            border: 2px solid #4a90e2;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .spoiler {
+            margin: 10px 0;
+        }
+        .spoiler-content {
+            display: none;
+            padding: 10px;
+            border: 2px solid #4a90e2;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .spoiler-button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+        }
+        .spoiler-button:hover {
+            background-color: #357ab7;
+            transform: scale(1.05);
+        }
+        .spoiler-button:active {
+            transform: scale(0.95);
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2) inset;
+        }
+        
+        /* Стили для детальной статистики */
+        #detailed-stats-container {
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 2px solid #4a90e2;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.15);
+        }
+        
+        #detailed-stats-container h3 {
+            color: #4a90e2;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+        
+        .stats-spoiler {
+            margin: 15px 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .spoiler-header {
+            padding: 15px 20px;
+            background: linear-gradient(145deg, #4a90e2, #357ab7);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .spoiler-header:hover {
+            background: linear-gradient(145deg, #357ab7, #2c5aa0);
+            transform: translateY(-2px);
+        }
+        
+        .spoiler-header h4 {
+            margin: 0;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .drop-type {
+            font-size: 0.8em;
+            background: rgba(255,255,255,0.2);
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: normal;
+        }
+        
+        .spoiler-arrow {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        
+        .spoiler-content {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-box {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #4a90e2;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-box:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .frequency-table {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .frequency-table h5 {
+            color: #4a90e2;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .frequency-table p {
+            margin: 0;
+            line-height: 1.6;
+            color: #495057;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        /* Стили для вкладки "Рекорды" и "Статистика" */
+        .records-container, .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .records-section, .stats-section {
+            flex: 1;
+            min-width: 300px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+            text-align: center; /* Центрирование текста */
+        }
+
+        .stats-section h3 {
+            color: #4a90e2;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .stats-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #4a90e2, #357ab7);
+            border-radius: 2px;
+        }
+        .record-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+        }
+        .record-info {
+            flex-grow: 1;
+        }
+        .record-date {
+            color: #777;
+            font-size: 0.8em;
+        }
+        
+        /* Стили для вкладки "История" */
+        .history-day {
+            margin-bottom: 15px;
+        }
+        .history-date {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .history-date:hover {
+            background-color: #e9e9e9;
+        }
+        .history-entries {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 0 0 5px 5px;
+            margin-top: -5px;
+            background-color: white;
+        }
+        .history-entry {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .history-time {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .history-type {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* Стили для таблиц статистики */
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-table th, .stats-table td {
+            padding: 12px;
+            text-align: left; /* Выравнивание по левому краю */
+            border: 1px solid #ddd;
+        }
+
+        .stats-table th {
+            background-color: #4a90e2;
+            color: white;
+            font-weight: bold;
+        }
+
+        .stats-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .stats-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .scale {
+            width: 100%;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 16px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .scale div {
+            height: 100%;
+            background: linear-gradient(90deg, #4a90e2, #357ab7, #4a90e2);
+            border-radius: 8px;
+            transition: width 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scale div::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Стили для статистики предметов без спойлеров */
+        .stat-item {
+            background: white;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(74, 144, 226, 0.2);
+            border-color: #4a90e2;
+        }
+        
+        .stat-item-header {
+            padding: 15px 20px;
+            background: linear-gradient(145deg, #4a90e2, #357ab7);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+        }
+        
+        .stat-item-header h4 {
+            margin: 0;
+            font-size: 1.1em;
+            flex: 1;
+        }
+        
+        .stat-item-header .item-image {
+            border-radius: 5px;
+            border: 2px solid rgba(255,255,255,0.3);
+            background: white;
+            padding: 2px;
+        }
+        
+        .stat-item .stats-grid,
+        .stat-item .frequency-table {
+            padding: 15px 20px;
+        }
+        
+        .stat-item .frequency-table {
+            background: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            margin: 0;
+        }
+        
+        .stat-item .frequency-table h5 {
+            margin: 0 0 10px 0;
+            color: #4a90e2;
+            font-size: 1em;
+        }
+        
+        .stat-item .frequency-table p {
+            margin: 0;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Стиль для суммы денег */
+        .money-total {
+            font-weight: bold;
+            font-size: 1em;
+            color: #28a745;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            padding: 10px;
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(40, 167, 69, 0.05));
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin: 10px 0;
+        }
+
+        /* Стили для результатов предметов */
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .item-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .item-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(74, 144, 226, 0.2);
+        }
+
+        .item-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .item-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 4px;
+            font-size: 1em;
+        }
+
+        .item-count {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .results-summary {
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(74, 144, 226, 0.05));
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .summary-text {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1em;
+        }
+
+        /* Стили для Drop Rate блока */
+        .drop-rate-box {
+            background: linear-gradient(135deg, #e8f5e8, #f0f8f0) !important;
+            border: 1px solid #4caf50 !important;
+            color: #2e7d32 !important;
+            font-weight: 600 !important;
+            grid-column: 1 / -1; /* Занимает всю ширину */
+        }
+        
+        .drop-rate-box strong {
+            color: #1b5e20 !important;
+        }
+        
+        /* Стили для кнопки сброса детальной статистики - в едином стиле с приложением */
+        .btn-reset {
+            background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+            color: #4a90e2;
+            border: 2px solid transparent;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
+        }
+        
+        .btn-reset::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .btn-reset:hover::before {
+            left: 100%;
+        }
+        
+        .btn-reset:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.4);
+            border-color: rgba(74, 144, 226, 0.5);
+            background: linear-gradient(145deg, rgba(255,255,255,1), rgba(240,248,255,0.9));
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            button {
+                width: 100%;
+            }
+            .records-container {
+                flex-direction: column;
+            }
+        }
+        
+        .record-item button {
+            margin-left: 5px;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: transparent;
+            color: #4a90e2;
+            cursor: pointer;
+            font-size: 18px; /* Размер шрифта для иконок */
+            transition: color 0.3s;
+        }
+
+        .record-item button:hover {
+            color: #357ab7;
+        }
+
+        /* Добавляем жирный шрифт для результатов и статистики */
+        .results-column, .stats-table th, .stats-table td {
+            font-weight: bold;
+        }
+
+        /* Добавляем зеленый цвет для итоговых результатов */
+        .total-result {
+            font-weight: bold;
+            color: green;
+        }
+
+        /* Стили для вкладки "Дроп" */
+        .drop-management {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .drop-controls, .drop-items-list, .drop-analysis {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .add-drop-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .add-drop-item input[type="text"] {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px;
+            border: 2px solid #4a90e2;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .currency-input {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            background-color: #f8f9fa;
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            padding: 8px;
+        }
+
+        .currency-field {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .currency-field input {
+            width: 60px;
+            padding: 6px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .currency-field input::-webkit-outer-spin-button,
+        .currency-field input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .currency-field input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        .drop-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .drop-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            margin-bottom: 8px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #4a90e2;
+        }
+
+        .drop-item-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .drop-item-details {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .drop-item-name {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .drop-item-price {
+            color: #28a745;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .drop-item-actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        .drop-item-actions button {
+            padding: 5px 8px;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .edit-btn {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        .edit-btn:hover {
+            background-color: #e0a800;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+
+        .drop-results {
+            margin-top: 20px;
+        }
+
+        .drop-summary {
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(40, 167, 69, 0.05));
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #28a745;
+        }
+
+        .drop-summary-text {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .drop-stats-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 8px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .drop-stats-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .drop-stats-name {
+            font-weight: bold;
+            color: #333;
+            min-width: 150px;
+        }
+
+        .drop-stats-count {
+            color: #4a90e2;
+            font-weight: 600;
+            min-width: 80px;
+        }
+
+        .drop-stats-value {
+            color: #28a745;
+            font-weight: bold;
+            min-width: 100px;
+        }
+
+        .drop-stats-percent {
+            color: #6c757d;
+            font-weight: 600;
+            min-width: 60px;
+        }
+
+        .drop-progress-bar {
+            flex: 1;
+            margin: 0 15px;
+        }
+
+        .drop-progress {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 30px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .drop-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            transition: width 0.8s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            min-width: 40px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+
+        .edit-drop-form {
+            display: none;
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .edit-drop-form input {
+            margin-right: 10px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .no-drop-data {
+            text-align: center;
+            color: #6c757d;
+            font-style: italic;
+            padding: 20px;
+        }
+
+        /* Стили для отдельной секции статистики дропа */
+        .drop-stats-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.15);
+            border: 2px solid rgba(74, 144, 226, 0.2);
+        }
+
+        .drop-stats-section h2 {
+            text-align: center;
+            color: #4a90e2;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            position: relative;
+        }
+
+        .drop-stats-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #4a90e2, #357ab7);
+            border-radius: 2px;
+        }
+
+        /* Стили для красивого отображения общего дохода */
+        .total-income-display {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 2px solid #4a90e2;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.15);
+        }
+
+        .income-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .income-header h3 {
+            color: #4a90e2;
+            font-size: 1.5em;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .income-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+        }
+
+        .income-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid #dee2e6;
+        }
+
+        .income-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            background: #e9ecef;
+        }
+
+        .income-label {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #4a90e2;
+            min-width: 80px;
+        }
+
+        .income-value {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            flex: 1;
+            text-align: right;
+        }
+
+        .income-coin-box {
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            min-width: 120px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .income-coin-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-color: #4a90e2;
+        }
+
+        .big-coin {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 10px auto;
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gold-coin {
+            border: 3px solid #ffd700;
+            background: linear-gradient(145deg, #fff8dc, #ffd700);
+        }
+
+        .silver-coin {
+            border: 3px solid #c0c0c0;
+            background: linear-gradient(145deg, #f5f5f5, #c0c0c0);
+        }
+
+        .copper-coin {
+            border: 3px solid #cd7f32;
+            background: linear-gradient(145deg, #f4e4bc, #cd7f32);
+        }
+
+        .coin-amount {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="./images/дракон.gif" alt="Дракон">
+    </div>
+    <h1>Логозавр:)</h1>
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('log')">
+            <i class="fas fa-file-alt"></i>
+            Лог
+        </div>
+        <div class="tab" onclick="showTab('attacks')">
+            <i class="fas fa-khanda"></i>
+            Нападения
+        </div>
+        <div class="tab" onclick="showTab('money')">
+            <i class="fas fa-coins"></i>
+            Деньги
+        </div>
+        <div class="tab" onclick="showTab('items')">
+            <i class="fas fa-box"></i>
+            Предметы
+        </div>
+        <div class="tab" onclick="showTab('records')">
+            <i class="fas fa-trophy"></i>
+            Рекорды
+        </div>
+        <div class="tab" onclick="showTab('history')">
+            <i class="fas fa-history"></i>
+            История
+        </div>
+        <div class="tab" onclick="showTab('drop')">
+            <i class="fas fa-gem"></i>
+            Дроп
+        </div>
+        <div class="tab" onclick="showTab('stats')">
+            <i class="fas fa-chart-bar"></i>
+            Статистика
+        </div>
+    </div>
+    <div id="log" class="tab-content active">
+        <div class="input-controls">
+            <button onclick="insertLog()" class="btn-secondary">
+                <i class="fas fa-paste"></i>
+                Вставить
+            </button>
+            <button onclick="clearLog()" class="btn-secondary">
+                <i class="fas fa-trash"></i>
+                Очистить
+            </button>
+        </div>
+        <textarea id="logInput" placeholder="Введите лог здесь..."></textarea>
+    </div>
+    <div id="attacks" class="tab-content">
+        <button onclick="countAttacks()">Посчитать нападения</button>
+    </div>
+    <div id="money" class="tab-content">
+        <button onclick="countMoney()">Посчитать деньги</button>
+    </div>
+    <div id="items" class="tab-content">
+        <button class="spoiler-button" onclick="toggleSpoiler('itemFilter')">Показать/Скрыть фильтр предметов</button>
+        <div id="itemFilter" class="spoiler-content">
+            <div class="checkbox-group" id="itemCheckboxGroup">
+                <!-- Существующие предметы будут добавлены здесь -->
+            </div>
+            <div class="add-item">
+                <input type="text" id="newItemInput" placeholder="Введите название предмета">
+                <button onclick="addItem()">Добавить предмет</button>
+                <button onclick="clearStorage()">Очистить хранилище</button>
+                <input type="file" id="fileInput" accept=".txt" onchange="importItems(event)">
+            </div>
+            <button onclick="toggleSelectAll()">Выбрать все/Снять все</button>
+            <button onclick="removeSelectedItems()">Удалить выбранные</button> <!-- Новая кнопка -->
+        </div>
+        <button onclick="countItems()">Посчитать предметы</button>
+        <button onclick="analyzeItemDrops()">📊 Детальная статистика</button>
+        <button onclick="resetAdvancedStats()" class="btn-reset">Сбросить детальную статистику</button>
+        
+
+    </div>
+    <div id="drop" class="tab-content">
+        <h2>Анализ дропа</h2>
+        <div class="drop-management">
+            <div class="drop-controls">
+                <h3>Управление ценами предметов</h3>
+                <div class="add-drop-item">
+                    <input type="text" id="dropItemName" placeholder="Название предмета">
+                    <div class="currency-input">
+                        <div class="currency-field">
+                            <img src="./images/1.svg" class="coin" alt="Золото">
+                            <input type="number" id="dropItemGold" placeholder="0" min="0" value="0">
+                        </div>
+                        <div class="currency-field">
+                            <img src="./images/2.svg" class="coin" alt="Серебро">
+                            <input type="number" id="dropItemSilver" placeholder="0" min="0" value="0">
+                        </div>
+                        <div class="currency-field">
+                            <img src="./images/3.svg" class="coin" alt="Медь">
+                            <input type="number" id="dropItemCopper" placeholder="0" min="0" value="0">
+                        </div>
+                    </div>
+                    <button onclick="addDropItem()">
+                        <i class="fas fa-plus"></i>
+                        Добавить
+                    </button>
+                </div>
+                <div class="drop-actions">
+                    <button onclick="exportDropData()">
+                        <i class="fas fa-download"></i>
+                        Экспорт данных
+                    </button>
+                    <input type="file" id="dropImportFile" accept=".json" style="display: none;" onchange="importDropData(event)">
+                    <button onclick="document.getElementById('dropImportFile').click()">
+                        <i class="fas fa-upload"></i>
+                        Импорт данных
+                    </button>
+                    <button onclick="clearDropData()">
+                        <i class="fas fa-trash"></i>
+                        Очистить все
+                    </button>
+                </div>
+            </div>
+            
+            <div class="drop-items-list">
+                <button class="spoiler-button" onclick="toggleSpoiler('dropItemsList')">
+                    <i class="fas fa-list"></i>
+                    Показать/Скрыть список предметов с ценами
+                </button>
+                <div id="dropItemsList" class="spoiler-content"></div>
+            </div>
+            
+            <div class="drop-analysis">
+                <h3>Анализ дропа из лога</h3>
+                <button onclick="analyzeDrop()">
+                    <i class="fas fa-search"></i>
+                    Анализировать дроп
+                </button>
+                <div id="dropResults"></div>
+            </div>
+        </div>
+    </div>
+    <div id="records" class="tab-content">
+        <h2>Рекорды</h2>
+        <div class="records-container">
+            <div class="records-section">
+                <h3>Рекорды нападений</h3>
+                <div id="attack-records"></div>
+                <button onclick="clearRecords('attack-records')">Сбросить рекорды нападений</button>
+            </div>
+            <div class="records-section">
+                <h3>Рекорды денег</h3>
+                <div id="money-records"></div>
+                <button onclick="clearRecords('money-record')">Сбросить рекорды денег</button>
+            </div>
+        </div>
+    </div>
+    <div id="history" class="tab-content">
+        <h2>История измерений</h2>
+        <div id="history-container">
+            <!-- История будет добавлена здесь -->
+        </div>
+        <button onclick="clearHistory()">Очистить историю</button>
+    </div>
+    <div id="stats" class="tab-content">
+        <h2>Общая статистика</h2>
+        <div class="stats-container">
+            <div class="stats-section">
+                <h3>Монстры</h3>
+                <div id="total-monsters-stats">
+                    <p>Загрузка статистики...</p>
+                </div>
+            </div>
+            <div class="stats-section">
+                <h3>Деньги</h3>
+                <div id="total-money-stats">
+                    <p>Загрузка статистики...</p>
+                </div>
+            </div>
+            <div class="stats-section">
+                <h3>Предметы</h3>
+                <div id="total-items-stats">
+                    <p>Загрузка статистики...</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="drop-stats-section">
+            <h2>Общая прибыль</h2>
+            <div id="total-profit-stats">
+                <div class="drop-summary">
+                    <div class="drop-summary-text">
+                        <strong>💰 Деньги с монстров:</strong> <span id="monster-profit-amount">0 <img src="./images/3.svg" class="coin" alt="Медь"></span><br>
+                        <strong>🎒 Деньги с дропа:</strong> <span id="drop-profit-amount">0 <img src="./images/3.svg" class="coin" alt="Медь"></span>
+                    </div>
+                </div>
+                
+                <!-- Красивое отображение общего дохода -->
+                <div class="total-income-display">
+                    <div class="income-header">
+                        <h3>📊 Общий доход</h3>
+                    </div>
+                    <div class="income-row">
+                        <div class="income-item">
+                            <img src="./images/1.svg" class="coin" alt="Золото">
+                            <span class="income-value" id="total-gold-amount">0</span>
+                        </div>
+                        <div class="income-item">
+                            <img src="./images/2.svg" class="coin" alt="Серебро">
+                            <span class="income-value" id="total-silver-amount">0</span>
+                        </div>
+                        <div class="income-item">
+                            <img src="./images/3.svg" class="coin" alt="Медь">
+                            <span class="income-value" id="total-copper-amount">0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="resetTotalProfit()" class="btn-secondary">Сбросить статистику прибыли</button>
+            </div>
+        </div>
+        
+        <div class="drop-stats-section">
+            <h2>Статистика анализа дропа</h2>
+            <div id="total-drop-stats">
+                <p>Загрузка статистики дропа...</p>
+            </div>
+        </div>
+        
+        <!-- Блок для детальной статистики -->
+        <div id="detailed-stats-section" style="display: none;">
+            <h2>📊 Детальная статистика по предметам</h2>
+            <div id="detailed-stats-display"></div>
+        </div>
+        
+        <button onclick="clearAllStats()">Сбросить всю статистику</button>
+    </div>
+    <div id="results"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSettings();
+            loadRecords();
+            loadHistory();
+            loadStats();
+            loadDropItems();
+            loadDropStats();
+            loadDetailedStats(); // Загружаем детальную статистику
+            updateTotalProfitDisplay(); // Добавляем загрузку статистики общей прибыли
+            
+            // Добавление обработчика двойного клика на историю для удаления записей
+            document.getElementById('history-container').addEventListener('dblclick', handleHistoryEntryDblClick);
+        });
+
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            // Безопасно убираем активные классы
+            tabs.forEach(tab => {
+                if (tab && tab.classList) {
+                    tab.classList.remove('active');
+                }
+            });
+            contents.forEach(content => {
+                if (content && content.classList) {
+                    content.classList.remove('active');
+                }
+            });
+            
+            // Безопасно добавляем активные классы
+            const activeTab = document.querySelector(`.tab[onclick="showTab('${tabId}')"]`);
+            const activeContent = document.getElementById(tabId);
+            
+            if (activeTab && activeTab.classList) {
+                activeTab.classList.add('active');
+            }
+            if (activeContent && activeContent.classList) {
+                activeContent.classList.add('active');
+            }
+        }
+
+        function toggleSpoiler(spoilerId) {
+            const spoilerContent = document.getElementById(spoilerId);
+            spoilerContent.style.display = spoilerContent.style.display === 'none' || spoilerContent.style.display === '' ? 'block' : 'none';
+        }
+
+        function countAttacks() {
+            const logInput = document.getElementById('logInput').value;
+            const attackCounts = parseLog(logInput, /Вы совершили нападение на (.+?)\s*\[/g);
+            displayResults(attackCounts, 'Результаты нападений:', true);
+        }
+
+        function countMoney() {
+            const logInput = document.getElementById('logInput').value;
+            const logLines = logInput.split('\n');
+            
+            // Регулярное выражение для обычных денег (с тремя числами - золото, серебро, медь)
+            const goldSilverCopperPattern = /Вы получили:\s*(\d+)\s+(\d+)\s+(\d+)/;
+            
+            // Регулярное выражение для обычных денег (с двумя числами - серебро, медь)
+            const silverCopperPattern = /Вы получили:\s*(\d+)\s+(\d+)(?!\s+\d)/;
+            
+            // Регулярное выражение для магических денег (с тремя числами - золото, серебро, медь)
+            const magicGoldSilverCopperPattern = /Благодаря магическим эффектам, вы сумели обогатиться еще на\s*(\d+)\s+(\d+)\s+(\d+)/;
+            
+            // Регулярное выражение для магических денег (с двумя числами - серебро, медь)
+            const magicSilverCopperPattern = /Благодаря магическим эффектам, вы сумели обогатиться еще на\s*(\d+)\s+(\d+)(?!\s+\d)/;
+            
+            // Подсчет обычных денег
+            const totalCopperGSC = calculateTotalCopper(logLines, goldSilverCopperPattern, true);
+            const totalCopperSC = calculateTotalCopper(logLines, silverCopperPattern, false);
+            const totalCopper = totalCopperGSC + totalCopperSC;
+            
+            // Подсчет магических денег
+            const magicTotalCopperGSC = calculateTotalCopper(logLines, magicGoldSilverCopperPattern, true);
+            const magicTotalCopperSC = calculateTotalCopper(logLines, magicSilverCopperPattern, false);
+            const magicTotalCopper = magicTotalCopperGSC + magicTotalCopperSC;
+            
+            const combinedTotalCopper = totalCopper + magicTotalCopper;
+
+            const moneyResult = formatMoneyResult(totalCopper, 'Выбито с боев') +
+                               formatMoneyResult(magicTotalCopper, 'Благодаря магическим эффектам') +
+                               formatMoneyResult(combinedTotalCopper, 'Итого');
+
+            displayMoneyResults(moneyResult, 'Результаты подсчета денег:');
+            
+            // Добавляем результат к общей прибыли только от подсчета денег
+            addToTotalProfit(combinedTotalCopper, 'monster');
+        }
+
+        function countItems() {
+            const logInput = document.getElementById('logInput').value;
+            const selectedItems = Array.from(document.querySelectorAll('.item-checkbox:checked')).map(checkbox => checkbox.value);
+            
+            if (selectedItems.length === 0) {
+                alert('Выберите хотя бы один предмет для поиска.');
+                return;
+            }
+            
+            // Создаем счетчик для хранения результатов
+            const itemCounts = {};
+            
+            // Разбиваем лог на строки
+            const logLines = logInput.split('\n');
+            
+            // Перебираем строки лога
+            logLines.forEach(line => {
+                // Для каждого выбранного предмета проверяем, есть ли он в строке
+                selectedItems.forEach(item => {
+                    // Экранируем специальные символы в названии предмета
+                    const escapedItem = item.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                    
+                    // Создаем регулярное выражение для конкретного предмета
+                    const itemRegex = new RegExp(`${escapedItem}\\s+(\\d+)\\s+шт`, 'g');
+                    
+                    // Поиск предмета в строке
+                    let match;
+                    while ((match = itemRegex.exec(line)) !== null) {
+                        // Извлекаем количество
+                        const quantity = parseInt(match[1]) || 1;
+                        
+                        // Добавляем к общему счету
+                        itemCounts[item] = (itemCounts[item] || 0) + quantity;
+                    }
+                });
+            });
+            
+            displayItemResults(itemCounts);
+        }
+
+        // Функция для детальной статистики по дропу
+        function analyzeItemDrops() {
+            const logInput = document.getElementById('logInput').value;
+            const selectedItems = Array.from(document.querySelectorAll('.item-checkbox:checked')).map(checkbox => checkbox.value);
+            
+            if (selectedItems.length === 0) {
+                alert('Выберите хотя бы один предмет для анализа.');
+                return;
+            }
+            
+            // Обновляем общее количество боёв
+            updateTotalBattles();
+            
+            // Загружаем существующую статистику из localStorage
+            let detailedStats = JSON.parse(localStorage.getItem('detailedDropStats') || '{}');
+            
+            // Разбиваем лог на строки
+            const logLines = logInput.split('\n');
+            
+            // Анализируем каждый выбранный предмет - используем тот же алгоритм что и в countItems()
+            selectedItems.forEach(item => {
+                // Инициализируем статистику для предмета, если её нет
+                if (!detailedStats[item]) {
+                    detailedStats[item] = {
+                        total: 0,
+                        count: 0,
+                        drops: [],
+                        freqTable: {},
+                        min: Infinity,
+                        max: 0
+                    };
+                }
+                
+                // Экранируем специальные символы в названии предмета
+                const escapedItem = item.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                
+                // Создаем регулярное выражение для конкретного предмета (тот же что и в countItems)
+                const itemRegex = new RegExp(`${escapedItem}\\s+(\\d+)\\s+шт`, 'g');
+                
+                // Перебираем строки лога
+                logLines.forEach(line => {
+                    let match;
+                    while ((match = itemRegex.exec(line)) !== null) {
+                        const quantity = parseInt(match[1]) || 1;
+                        
+                        // Обновляем статистику
+                        detailedStats[item].total += quantity;
+                        detailedStats[item].count += 1;
+                        detailedStats[item].drops.push(quantity);
+                        
+                        // Обновляем min/max
+                        detailedStats[item].min = Math.min(detailedStats[item].min, quantity);
+                        detailedStats[item].max = Math.max(detailedStats[item].max, quantity);
+                        
+                        // Обновляем таблицу частот
+                        if (!detailedStats[item].freqTable[quantity]) {
+                            detailedStats[item].freqTable[quantity] = 0;
+                        }
+                        detailedStats[item].freqTable[quantity] += 1;
+                    }
+                });
+                
+                // Если min остался Infinity (нет данных), устанавливаем в 0
+                if (detailedStats[item].min === Infinity) {
+                    detailedStats[item].min = 0;
+                }
+            });
+            
+            // Сохраняем обновленную статистику
+            localStorage.setItem('detailedDropStats', JSON.stringify(detailedStats));
+            
+            // Отображаем результаты
+            displayDetailedStats(detailedStats, selectedItems);
+            
+            // Переключаемся на вкладку статистики
+            showTab('statistics');
+        }
+
+        // Функция для отображения детальной статистики
+        function displayDetailedStats(stats, selectedItems) {
+            const section = document.getElementById('detailed-stats-section');
+            const display = document.getElementById('detailed-stats-display');
+            
+            // Показываем все предметы из статистики, а не только выбранные
+            const allItems = Object.keys(stats).filter(item => stats[item].count > 0);
+            
+            if (allItems.length === 0) {
+                section.style.display = 'none';
+                return;
+            }
+            
+            let html = '';
+            const maxVisible = 5; // Показываем только 5 предметов, остальные под спойлером
+            
+            // Показываем первые предметы
+            const visibleItems = allItems.slice(0, maxVisible);
+            const hiddenItems = allItems.slice(maxVisible);
+            
+            visibleItems.forEach(item => {
+                html += generateItemStatsHTML(item, stats[item]);
+            });
+            
+            // Если есть скрытые предметы, добавляем спойлер
+            if (hiddenItems.length > 0) {
+                html += `
+                    <div class="stats-spoiler">
+                        <div class="spoiler-header" onclick="toggleSpoiler('more-items-spoiler')">
+                            <h4>📋 Показать ещё ${hiddenItems.length} предметов</h4>
+                            <span class="spoiler-arrow">▼</span>
+                        </div>
+                        <div id="more-items-spoiler" class="spoiler-content">
+                `;
+                
+                hiddenItems.forEach(item => {
+                    html += generateItemStatsHTML(item, stats[item]);
+                });
+                
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+            
+            display.innerHTML = html;
+            section.style.display = 'block';
+        }
+        
+        // Функция для генерации HTML одного предмета
+        function generateItemStatsHTML(item, itemStats) {
+            if (!itemStats || itemStats.count === 0) {
+                return `<div class="stat-item">
+                    <div class="stat-item-header">
+                        <img src="./images/${item}.gif" class="item-image" style="width: 30px; height: 30px;" onerror="this.style.display='none'">
+                        <h4>${item}</h4>
+                    </div>
+                    <p>Данных по этому предмету не найдено.</p>
+                </div>`;
+            }
+            
+            // Вычисляем среднее значение
+            const avg = itemStats.count > 0 ? (itemStats.total / itemStats.count).toFixed(2) : 0;
+            
+            // Вычисляем Drop Rate
+            const totalBattles = getTotalBattlesFromStats();
+            const dropRate = totalBattles > 0 ? (itemStats.count / totalBattles * 100).toFixed(2) : 0;
+            const dropRateText = totalBattles > 0 ? 
+                `${dropRate}% (${itemStats.count} из ${totalBattles} боёв)` : 
+                'Нет данных о боях';
+            
+            // Формируем таблицу частот
+            const totalDrops = Object.values(itemStats.freqTable).reduce((a, b) => a + b, 0);
+            const freqEntriesArray = Object.entries(itemStats.freqTable)
+                .sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
+                .map(([qty, count]) => {
+                    const percent = ((count / totalDrops) * 100).toFixed(1);
+                    return `${qty} шт: ${count} раз (${percent}%)`;
+                });
+            
+            // Формируем красивое отображение частоты
+            let freqEntries;
+            if (freqEntriesArray.length === 0) {
+                freqEntries = 'Нет данных';
+            } else if (freqEntriesArray.length === 1) {
+                // Если только одна запись - показываем жирным в одну строку
+                const [qty, count] = Object.entries(itemStats.freqTable)[0];
+                const percent = ((count / totalDrops) * 100).toFixed(1);
+                freqEntries = `<strong>${qty} шт: ${count} раз (${percent}%)</strong>`;
+            } else {
+                // Если несколько записей - показываем каждую жирной строкой
+                freqEntries = Object.entries(itemStats.freqTable)
+                    .sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
+                    .map(([qty, count]) => {
+                        const percent = ((count / totalDrops) * 100).toFixed(1);
+                        return `<strong>${qty} шт: ${count} раз (${percent}%)</strong>`;
+                    })
+                    .join('<br>');
+            }
+            
+            return `
+                <div class="stat-item">
+                    <div class="stat-item-header">
+                        <img src="./images/${item}.gif" class="item-image" style="width: 30px; height: 30px;" onerror="this.style.display='none'">
+                        <h4>${item}</h4>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <strong>Всего:</strong> ${itemStats.total}
+                        </div>
+                        <div class="stat-box">
+                            <strong>Выпадений:</strong> ${itemStats.count}
+                        </div>
+                        <div class="stat-box">
+                            <strong>Среднее:</strong> ${avg}
+                        </div>
+                        <div class="stat-box">
+                            <strong>Мин:</strong> ${itemStats.min}, <strong>Макс:</strong> ${itemStats.max}
+                        </div>
+                        <div class="stat-box drop-rate-box">
+                            <strong>Частота дропа в боях:</strong> ${dropRateText}
+                        </div>
+                    </div>
+                    <div class="frequency-table">
+                        <h5 style="color: #4a90e2; font-weight: bold; margin-top: 10px; margin-bottom: 8px;">Частота выпадений:</h5>
+                        <div style="margin-left: 10px; line-height: 1.6;">${freqEntries || 'Нет данных'}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Функция для подсчёта общего количества боёв с накоплением
+        function getTotalBattlesFromStats() {
+            // Загружаем ранее накопленное значение
+            let savedTotalBattles = parseInt(localStorage.getItem('totalBattles') || '0');
+            return savedTotalBattles;
+        }
+
+        // Функция для обновления общего количества боёв
+        function updateTotalBattles() {
+            const logInput = document.getElementById('logInput');
+            if (!logInput || !logInput.value.trim()) {
+                return 0;
+            }
+            
+            // Счётчик боёв за текущую сессию
+            let battlesThisSession = (logInput.value.match(/Начался бой/g) || []).length;
+            
+            // Загрузка ранее накопленного значения
+            let savedTotalBattles = parseInt(localStorage.getItem('totalBattles') || '0');
+            
+            // Суммирование
+            let updatedTotalBattles = savedTotalBattles + battlesThisSession;
+            
+            // Сохранение в localStorage
+            localStorage.setItem('totalBattles', updatedTotalBattles.toString());
+            
+            return updatedTotalBattles;
+        }
+
+        // Функция для сброса детальной статистики
+        function resetAdvancedStats() {
+            if (confirm('Вы уверены, что хотите сбросить всю детальную статистику? Это действие нельзя отменить.')) {
+                // Очищаем localStorage
+                localStorage.removeItem('detailedDropStats');
+                localStorage.removeItem('totalBattles');
+                
+                // Безопасно скрываем блок детальной статистики
+                const section = document.getElementById('detailed-stats-section');
+                if (section && section.style) {
+                    section.style.display = 'none';
+                }
+                
+                // Безопасно очищаем отображение
+                const display = document.getElementById('detailed-stats-display');
+                if (display && display.innerHTML !== undefined) {
+                    display.innerHTML = '';
+                }
+                
+                alert('Детальная статистика успешно сброшена.');
+            }
+        }
+
+        // Функция для загрузки существующей детальной статистики
+        function loadDetailedStats() {
+            const stats = JSON.parse(localStorage.getItem('detailedDropStats') || '{}');
+            if (Object.keys(stats).length > 0) {
+                displayDetailedStats(stats, []);
+            }
+        }
+
+        function toggleSelectAll() {
+            const checkboxes = document.querySelectorAll('.item-checkbox');
+            const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+            checkboxes.forEach(checkbox => checkbox.checked = !allChecked);
+        }
+
+        function clearStorage() {
+            localStorage.removeItem('itemSettings');
+            document.getElementById('itemCheckboxGroup').innerHTML = '';
+            alert('Локальное хранилище очищено.');
+        }
+
+        function addItem() {
+            const newItemInput = document.getElementById('newItemInput');
+            const newItem = newItemInput.value.trim();
+            if (newItem && !isItemExists(newItem.toLowerCase())) {
+                const checkboxGroup = document.getElementById('itemCheckboxGroup');
+                const label = document.createElement('label');
+                label.innerHTML = `<input type="checkbox" class="item-checkbox" value="${newItem}"> ${newItem}`;
+                checkboxGroup.appendChild(label);
+                newItemInput.value = '';
+                saveSettings();
+            } else {
+                alert('Этот предмет уже существует или поле пустое.');
+            }
+        }
+
+        function removeSelectedItems() {
+            const checkboxes = document.querySelectorAll('.item-checkbox:checked');
+            checkboxes.forEach(checkbox => {
+                const label = checkbox.parentElement;
+                label.remove();
+            });
+            saveSettings();
+        }
+
+        function isItemExists(item) {
+            const checkboxes = document.querySelectorAll('.item-checkbox');
+            return Array.from(checkboxes).some(checkbox => checkbox.value.toLowerCase() === item);
+        }
+
+        function importItems(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const content = e.target.result;
+                const lines = content.split('\n');
+                const checkboxGroup = document.getElementById('itemCheckboxGroup');
+                
+                lines.forEach(line => {
+                    const item = line.trim();
+                    if (item && !isItemExists(item.toLowerCase())) {
+                        const label = document.createElement('label');
+                        label.innerHTML = `<input type="checkbox" class="item-checkbox" value="${item}"> ${item}`;
+                        checkboxGroup.appendChild(label);
+                    }
+                });
+                
+                saveSettings();
+                event.target.value = '';
+            };
+            reader.readAsText(file);
+        }
+
+        function saveSettings() {
+            const checkboxes = document.querySelectorAll('.item-checkbox');
+            const items = Array.from(checkboxes).map(checkbox => checkbox.value);
+            localStorage.setItem('itemSettings', JSON.stringify(items));
+        }
+
+        function loadSettings() {
+            try {
+                const savedItems = JSON.parse(localStorage.getItem('itemSettings')) || [];
+                const checkboxGroup = document.getElementById('itemCheckboxGroup');
+                
+                savedItems.forEach(item => {
+                    const label = document.createElement('label');
+                    label.innerHTML = `<input type="checkbox" class="item-checkbox" value="${item}"> ${item}`;
+                    checkboxGroup.appendChild(label);
+                });
+            } catch (error) {
+                console.error('Error loading settings:', error);
+                localStorage.removeItem('itemSettings');
+            }
+        }
+
+        function parseLog(log, pattern) {
+            const counts = {};
+            let match;
+            
+            if (pattern.global) {
+                // For global regex patterns
+                while ((match = pattern.exec(log)) !== null) {
+                    const name = match[1].trim();
+                    const quantity = match[2] ? parseInt(match[2]) : 1;
+                    counts[name] = (counts[name] || 0) + quantity;
+                }
+            } else {
+                // For non-global regex patterns
+                const lines = log.split('\n');
+                for (const line of lines) {
+                    match = line.match(pattern);
+                    if (match) {
+                        const name = match[1].trim();
+                        const quantity = match[2] ? parseInt(match[2]) : 1;
+                        counts[name] = (counts[name] || 0) + quantity;
+                    }
+                }
+            }
+            
+            return counts;
+        }
+
+        function calculateTotalCopper(logLines, pattern, hasGold = false) {
+            let totalCopper = 0;
+            
+            for (const line of logLines) {
+                const match = line.match(pattern);
+                if (match) {
+                    if (hasGold) {
+                        // Если это формат с золотом, серебром и медью
+                        const gold = parseInt(match[1]) || 0;
+                        const silver = parseInt(match[2]) || 0;
+                        const copper = parseInt(match[3]) || 0;
+                        
+                        totalCopper += gold * 10000 + silver * 100 + copper;
+                    } else {
+                        // Если это формат только с серебром и медью
+                        const silver = parseInt(match[1]) || 0;
+                        const copper = parseInt(match[2]) || 0;
+                        
+                        totalCopper += silver * 100 + copper;
+                    }
+                }
+            }
+            
+            return totalCopper;
+        }
+
+        function formatMoneyResult(totalCopper, label) {
+            const gold = Math.floor(totalCopper / 10000);
+            const remainder = totalCopper % 10000;
+            const silver = Math.floor(remainder / 100);
+            const copper = remainder % 100;
+
+            return `<div>${label}: ${gold} <img src="./images/1.svg" class="coin" alt="золото">, ${silver} <img src="./images/2.svg" class="coin" alt="серебро">, ${copper} <img src="./images/3.svg" class="coin" alt="медь"></div>`;
+        }
+
+        function displayResults(results, title, includeImages = false) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `<h2 style="font-weight: bold;">${title}</h2>`; // Заголовок жирным
+            const container = document.createElement('div');
+            container.style.display = 'flex';
+            container.style.flexWrap = 'wrap';
+            
+            let row = document.createElement('div');
+            row.style.display = 'flex';
+            row.style.width = '100%';
+
+            let count = 0;
+
+            for (const [key, value] of Object.entries(results)) {
+                const itemDiv = document.createElement('div');
+                itemDiv.style.flex = '1 0 30%'; // Занимает 30% ширины, чтобы вмещать 3 предмета в строке
+                itemDiv.style.boxSizing = 'border-box';
+                itemDiv.style.padding = '10px'; // Отступы для визуального разделения
+                
+                // Условие для изменения размера изображения
+                const imageSize = title === 'Результаты нападений:' ? '150px' : '50px';
+                itemDiv.innerHTML = `${includeImages ? `<img src="./images/${key}.gif" class="item-image" style="width: ${imageSize}; height: ${imageSize};" alt="${key}">` : ''} ${key}: ${value}`;
+                
+                row.appendChild(itemDiv);
+                count++;
+
+                // Если добавлено 3 предмета, добавляем строку в контейнер и создаем новую
+                if (count % 3 === 0) {
+                    container.appendChild(row);
+                    row = document.createElement('div');
+                    row.style.display = 'flex';
+                    row.style.width = '100%';
+                }
+            }
+
+            // Добавляем оставшиеся элементы, если они есть
+            if (count % 3 !== 0) {
+                container.appendChild(row);
+            }
+
+            resultsDiv.appendChild(container);
+        }
+
+        function displayMoneyResults(results, title) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `<h2 style="font-weight: bold;">${title}</h2>`; // Заголовок жирным
+            const div = document.createElement('div');
+            div.className = 'results-column';
+            div.innerHTML = results;
+            resultsDiv.appendChild(div);
+            
+            // Обновление рекордов денег и истории
+            updateMoneyRecords(results);
+            addHistoryEntry('money', results);
+        }
+        
+        // Обновленная функция displayResults для учета рекордов и истории
+        function displayResults(results, title, includeImages = false) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `<h2 style="font-weight: bold;">${title}</h2>`; // Заголовок жирным
+            const container = document.createElement('div');
+            container.style.display = 'flex';
+            container.style.flexWrap = 'wrap';
+            
+            let row = document.createElement('div');
+            row.style.display = 'flex';
+            row.style.width = '100%';
+
+            let count = 0;
+
+            for (const [key, value] of Object.entries(results)) {
+                const itemDiv = document.createElement('div');
+                itemDiv.style.flex = '1 0 30%'; // Занимает 30% ширины, чтобы вмещать 3 предмета в строке
+                itemDiv.style.boxSizing = 'border-box';
+                itemDiv.style.padding = '10px'; // Отступы для визуального разделения
+                const imageSize = title === 'Результаты нападений:' ? '150px' : '50px'; // Условие для размера изображения
+                itemDiv.innerHTML = `${includeImages ? `<img src="./images/${key}.gif" class="item-image" style="width: ${imageSize}; height: ${imageSize};" alt="${key}">` : ''} ${key}: ${value}`;
+                
+                row.appendChild(itemDiv);
+                count++;
+
+                // Если добавлено 3 предмета, добавляем строку в контейнер и создаем новую
+                if (count % 3 === 0) {
+                    container.appendChild(row);
+                    row = document.createElement('div');
+                    row.style.display = 'flex';
+                    row.style.width = '100%';
+                }
+            }
+
+                        // Добавляем оставшиеся элементы, если они есть
+            if (count % 3 !== 0) {
+                container.appendChild(row);
+            }
+
+            resultsDiv.appendChild(container);
+            
+            // Если это результаты нападений, обновляем рекорды
+            if (title === 'Результаты нападений:') {
+                updateAttackRecords(results);
+                addHistoryEntry('attacks', results);
+            } else if (title === 'Результаты подсчета предметов:') {
+                addHistoryEntry('items', results);
+            }
+        }
+        
+        // Функция для обновления рекордов нападений
+        function updateAttackRecords(results) {
+            // Загрузка текущих рекордов
+            const records = JSON.parse(localStorage.getItem('attack-records') || '{}');
+            let updated = false;
+            
+            // Проверка и обновление рекордов
+            for (const [monster, count] of Object.entries(results)) {
+                if (!records[monster] || records[monster].count < count) {
+                    records[monster] = {
+                        count: count,
+                        date: new Date().toISOString()
+                    };
+                    updated = true;
+                }
+            }
+            
+            // Сохранение рекордов и обновление отображения
+            if (updated) {
+                localStorage.setItem('attack-records', JSON.stringify(records));
+                displayAttackRecords();
+            }
+        }
+        
+        // Функция для обновления рекордов денег
+        function updateMoneyRecords(resultHTML) {
+            // Извлечение итогового значения меди из HTML
+            const totalMatch = resultHTML.match(/Итого: (\d+) .+?, (\d+) .+?, (\d+)/);
+            const gold = parseInt(totalMatch[1]);
+            const silver = parseInt(totalMatch[2]);
+            const copper = parseInt(totalMatch[3]);
+            const totalCopper = gold * 10000 + silver * 100 + copper;
+            
+            // Загрузка текущего рекорда
+            const record = JSON.parse(localStorage.getItem('money-record') || '{"totalCopper": 0}');
+            
+            // Проверка и обновление рекорда
+            if (totalCopper > record.totalCopper) {
+                record.totalCopper = totalCopper;
+                record.gold = gold;
+                record.silver = silver;
+                record.copper = copper;
+                record.date = new Date().toISOString();
+                
+                localStorage.setItem('money-record', JSON.stringify(record));
+                displayMoneyRecords();
+            }
+        }
+        
+        // Функция для отображения рекордов нападений
+        function displayAttackRecords() {
+            const recordsContainer = document.getElementById('attack-records');
+            recordsContainer.innerHTML = '';
+            
+            const records = JSON.parse(localStorage.getItem('attack-records') || '{}');
+            const sortedRecords = Object.entries(records).sort((a, b) => b[1].count - a[1].count);
+            
+            if (sortedRecords.length === 0) {
+                recordsContainer.innerHTML = '<p>Нет рекордов</p>';
+                return;
+            }
+            
+            for (const [monster, data] of sortedRecords) {
+                const recordItem = document.createElement('div');
+                recordItem.className = 'record-item';
+                
+                // Добавление изображения (если есть)
+                const img = document.createElement('img');
+                img.src = `./images/${monster}.gif`;
+                img.alt = monster;
+                img.className = 'item-image';
+                img.style.width = '150px'; // Установка ширины изображения
+                img.style.height = '150px'; // Установка высоты изображения
+                img.onerror = () => { img.style.display = 'none'; };
+                recordItem.appendChild(img);
+                
+                // Информация о рекорде
+                const info = document.createElement('div');
+                info.className = 'record-info';
+                
+                const monsterName = document.createElement('div');
+                monsterName.textContent = `${monster}: ${data.count}`;
+                info.appendChild(monsterName);
+                
+                const date = document.createElement('div');
+                date.className = 'record-date';
+                date.textContent = new Date(data.date).toLocaleDateString();
+                info.appendChild(date);
+                
+                recordItem.appendChild(info);
+                
+                // Кнопки редактирования и удаления
+                const editButton = document.createElement('button');
+                editButton.innerHTML = '&#9998;'; // Иконка ручки
+                editButton.title = 'Редактировать';
+                editButton.onclick = () => editRecord('attack-records', monster);
+                recordItem.appendChild(editButton);
+                
+                const deleteButton = document.createElement('button');
+                deleteButton.innerHTML = '&#10006;'; // Иконка крестика
+                deleteButton.title = 'Удалить';
+                deleteButton.onclick = () => deleteRecord('attack-records', monster);
+                recordItem.appendChild(deleteButton);
+                
+                recordsContainer.appendChild(recordItem);
+            }
+        }
+        
+        // Функция для отображения рекордов денег
+        function displayMoneyRecords() {
+            const recordsContainer = document.getElementById('money-records');
+            recordsContainer.innerHTML = '';
+            
+            const record = JSON.parse(localStorage.getItem('money-record') || '{"totalCopper": 0}');
+            
+            if (record.totalCopper === 0) {
+                recordsContainer.innerHTML = '<p>Нет рекордов</p>';
+                return;
+            }
+            
+            const recordItem = document.createElement('div');
+            recordItem.className = 'record-item';
+            
+            // Информация о рекорде
+            const info = document.createElement('div');
+            info.className = 'record-info';
+            
+            const moneyAmount = document.createElement('div');
+            moneyAmount.innerHTML = `Рекорд: <span class="total-result">${record.gold || 0} <img src="./images/1.svg" class="coin" alt="золото">, 
+                                     ${record.silver || 0} <img src="./images/2.svg" class="coin" alt="серебро">, 
+                                     ${record.copper || 0} <img src="./images/3.svg" class="coin" alt="медь"></span>`;
+            info.appendChild(moneyAmount);
+            
+            if (record.date) {
+                const date = document.createElement('div');
+                date.className = 'record-date';
+                date.textContent = new Date(record.date).toLocaleDateString();
+                info.appendChild(date);
+            }
+            
+            recordItem.appendChild(info);
+            
+            // Кнопки редактирования и удаления
+            const editButton = document.createElement('button');
+            editButton.innerHTML = '&#9998;'; // Иконка ручки
+            editButton.title = 'Редактировать';
+            editButton.onclick = () => editMoneyRecord();
+            recordItem.appendChild(editButton);
+            
+            const deleteButton = document.createElement('button');
+            deleteButton.innerHTML = '&#10006;'; // Иконка крестика
+            deleteButton.title = 'Удалить';
+            deleteButton.onclick = () => deleteMoneyRecord();
+            recordItem.appendChild(deleteButton);
+            
+            recordsContainer.appendChild(recordItem);
+        }
+        
+        // Функция для удаления рекорда нападений
+        function deleteRecord(recordType, monster) {
+            if (confirm(`Вы уверены, что хотите удалить рекорд для ${monster}?`)) {
+                const records = JSON.parse(localStorage.getItem(recordType) || '{}');
+                delete records[monster];
+                localStorage.setItem(recordType, JSON.stringify(records));
+                displayAttackRecords(); // Обновляем отображение
+            }
+        }
+
+        // Функция для удаления рекорда денег
+        function deleteMoneyRecord() {
+            if (confirm('Вы уверены, что хотите удалить рекорд денег?')) {
+                localStorage.removeItem('money-record');
+                displayMoneyRecords(); // Обновляем отображение
+            }
+        }
+
+        // Функция для редактирования рекорда нападений
+        function editRecord(recordType, monster) {
+            const records = JSON.parse(localStorage.getItem(recordType) || '{}');
+            const newCount = prompt(`Введите новое количество для ${monster}:`, records[monster].count);
+            
+            if (newCount !== null) {
+                records[monster].count = parseInt(newCount);
+                records[monster].date = new Date().toISOString(); // Обновляем дату
+                localStorage.setItem(recordType, JSON.stringify(records));
+                displayAttackRecords(); // Обновляем отображение
+            }
+        }
+
+        // Функция для редактирования рекорда денег
+        function editMoneyRecord() {
+            const record = JSON.parse(localStorage.getItem('money-record') || '{"totalCopper": 0}');
+            const newGold = prompt(`Введите новое количество золота:`, record.gold);
+            const newSilver = prompt(`Введите новое количество серебра:`, record.silver);
+            const newCopper = prompt(`Введите новое количество меди:`, record.copper);
+            
+            if (newGold !== null && newSilver !== null && newCopper !== null) {
+                record.gold = parseInt(newGold);
+                record.silver = parseInt(newSilver);
+                record.copper = parseInt(newCopper);
+                record.date = new Date().toISOString(); // Обновляем дату
+                localStorage.setItem('money-record', JSON.stringify(record));
+                displayMoneyRecords(); // Обновляем отображение
+            }
+        }
+
+        // Функция для загрузки рекордов при загрузке страницы
+        function loadRecords() {
+            displayAttackRecords();
+            displayMoneyRecords();
+        }
+        
+        // Функция для очистки рекордов
+        function clearRecords(recordType) {
+            if (recordType === 'attack-records') {
+                localStorage.removeItem('attack-records');
+                displayAttackRecords();
+            } else if (recordType === 'money-record') {
+                localStorage.removeItem('money-record');
+                displayMoneyRecords();
+            }
+        }
+        
+        // Функция для добавления записи в историю
+        function addHistoryEntry(type, data) {
+            // Загрузка текущей истории
+            let history = JSON.parse(localStorage.getItem('log-history') || '[]');
+            
+            // Создание новой записи
+            const entry = {
+                type: type,
+                data: data,
+                date: new Date().toISOString()
+            };
+            
+            // Добавление записи в историю
+            history.unshift(entry);
+            
+            // Ограничение истории (например, до 100 записей)
+            if (history.length > 100) {
+                history = history.slice(0, 100);
+            }
+            
+            // Сохранение истории
+            localStorage.setItem('log-history', JSON.stringify(history));
+            
+            // Обновляем отображение истории и статистики
+            displayHistory();
+            loadStats();
+        }
+        
+        // Функция для отображения истории
+        function displayHistory() {
+            const historyContainer = document.getElementById('history-container');
+            historyContainer.innerHTML = '';
+            
+            const history = JSON.parse(localStorage.getItem('log-history') || '[]');
+            
+            if (history.length === 0) {
+                historyContainer.innerHTML = '<p>История пуста</p>';
+                return;
+            }
+            
+            // Группировка истории по датам (без учета времени)
+            const groupedByDate = {};
+            history.forEach(entry => {
+                const date = new Date(entry.date).toLocaleDateString();
+                if (!groupedByDate[date]) {
+                    groupedByDate[date] = [];
+                }
+                groupedByDate[date].push(entry);
+            });
+            
+            // Отображение истории по дням в виде спойлеров
+            for (const [date, entries] of Object.entries(groupedByDate)) {
+                const historyDay = document.createElement('div');
+                historyDay.className = 'history-day';
+                
+                // Создание заголовка даты (спойлер)
+                const dateHeader = document.createElement('div');
+                dateHeader.className = 'history-date';
+                dateHeader.innerHTML = `${date} <span>(${entries.length} записей)</span>`;
+                dateHeader.onclick = function() {
+                    const entriesDiv = this.nextElementSibling;
+                    entriesDiv.style.display = entriesDiv.style.display === 'none' || entriesDiv.style.display === '' ? 'block' : 'none';
+                };
+                historyDay.appendChild(dateHeader);
+                
+                // Создание контейнера для записей этой даты
+                const entriesDiv = document.createElement('div');
+                entriesDiv.className = 'history-entries';
+                
+                // Добавление всех записей для этой даты
+                entries.forEach(entry => {
+                    const entryDiv = document.createElement('div');
+                    entryDiv.className = 'history-entry';
+                    
+                    // Время записи
+                    const timeDiv = document.createElement('div');
+                    timeDiv.className = 'history-time';
+                    timeDiv.textContent = new Date(entry.date).toLocaleTimeString();
+                    entryDiv.appendChild(timeDiv);
+                    
+                    // Тип записи
+                    const typeDiv = document.createElement('div');
+                    typeDiv.className = 'history-type';
+                    typeDiv.textContent = getTypeLabel(entry.type);
+                    entryDiv.appendChild(typeDiv);
+                    
+                    // Данные записи
+                    const dataDiv = document.createElement('div');
+                    dataDiv.className = 'history-data';
+                    
+                    if (entry.type === 'money') {
+                        // Для денег отображаем только итоговую сумму
+                        const totalMatch = entry.data.match(/Итого: (\d+) .+?, (\d+) .+?, (\d+)/);
+                        if (totalMatch) {
+                            dataDiv.innerHTML = `${totalMatch[1]} <img src="./images/1.svg" class="coin" alt="золото">, 
+                                               ${totalMatch[2]} <img src="./images/2.svg" class="coin" alt="серебро">, 
+                                               ${totalMatch[3]} <img src="./images/3.svg" class="coin" alt="медь">`;
+                        } else {
+                            dataDiv.textContent = 'Нет данных';
+                        }
+                    } else {
+                        // Для других типов показываем количество элементов
+                        const count = Object.keys(entry.data).length;
+                        dataDiv.textContent = `Элементов: ${count}`;
+                        
+                        // Добавляем кнопку "Подробнее" для просмотра всех данных
+                        const detailsButton = document.createElement('button');
+                        detailsButton.textContent = 'Подробнее';
+                        detailsButton.className = 'spoiler-button';
+                        detailsButton.style.marginLeft = '10px';
+                        detailsButton.onclick = function() {
+                            const detailsDiv = this.nextElementSibling;
+                            detailsDiv.style.display = detailsDiv.style.display === 'none' || detailsDiv.style.display === '' ? 'block' : 'none';
+                        };
+                        dataDiv.appendChild(detailsButton);
+                        
+                        // Создаем скрытый div для подробностей
+                        const detailsDiv = document.createElement('div');
+                        detailsDiv.style.display = 'none';
+                        detailsDiv.style.marginTop = '10px';
+                        
+                        const detailsList = document.createElement('ul');
+                        for (const [key, value] of Object.entries(entry.data)) {
+                            const li = document.createElement('li');
+                            if (entry.type === 'attacks' || entry.type === 'items') {
+                                const img = document.createElement('img');
+                                img.src = `./images/${key}.gif`;
+                                img.alt = key;
+                                img.className = 'item-image';
+                                img.style.width = '50px';
+                                img.style.height = '50px';
+                                img.onerror = () => { img.style.display = 'none'; };
+                                li.appendChild(img);
+                            }
+                            li.innerHTML += `${key}: ${value}`;
+                            detailsList.appendChild(li);
+                        }
+                        detailsDiv.appendChild(detailsList);
+                        dataDiv.appendChild(detailsDiv);
+                    }
+                    
+                    entryDiv.appendChild(dataDiv);
+                    entriesDiv.appendChild(entryDiv);
+                });
+                
+                historyDay.appendChild(entriesDiv);
+                historyContainer.appendChild(historyDay);
+            }
+        }
+        
+        // Функция для получения метки типа записи
+        function getTypeLabel(type) {
+            switch(type) {
+                case 'attacks': return 'Нападения';
+                case 'money': return 'Деньги';
+                case 'items': return 'Предметы';
+                default: return type;
+            }
+        }
+        
+        // Функция для загрузки истории при загрузке страницы
+        function loadHistory() {
+            displayHistory();
+        }
+        
+        // Функция для очистки истории
+        function clearHistory() {
+            localStorage.removeItem('log-history');
+            displayHistory();
+        }
+        
+        // Функция обработки двойного щелчка на записи истории
+        function handleHistoryEntryDblClick(event) {
+            // Ищем ближайший родительский элемент с классом history-entry
+            const historyEntry = event.target.closest('.history-entry');
+            if (!historyEntry) return;
+            
+            // Запрашиваем подтверждение у пользователя
+            if (confirm('Удалить эту запись из истории?')) {
+                // Находим индекс записи
+                const allEntries = document.querySelectorAll('.history-entry');
+                const index = Array.from(allEntries).indexOf(historyEntry);
+                
+                if (index !== -1) {
+                    // Загружаем историю
+                    let history = JSON.parse(localStorage.getItem('log-history') || '[]');
+                    
+                    // Определяем, к какой дате относится запись
+                    const dateContainer = historyEntry.closest('.history-entries');
+                    const dateEntries = dateContainer.querySelectorAll('.history-entry');
+                    const entryIndexInDate = Array.from(dateEntries).indexOf(historyEntry);
+                    
+                    // Находим дату
+                    const dateHeader = dateContainer.previousElementSibling;
+                    const dateText = dateHeader.textContent.split(' (')[0];
+                    
+                    // Фильтруем записи по дате и находим нужную
+                    const entriesForDate = history.filter(entry => {
+                        return new Date(entry.date).toLocaleDateString() === dateText;
+                    });
+                    
+                    if (entriesForDate.length > entryIndexInDate) {
+                        // Находим запись в общем массиве
+                        const entryToRemove = entriesForDate[entryIndexInDate];
+                        const indexInFullHistory = history.findIndex(entry => entry.date === entryToRemove.date);
+                        
+                        if (indexInFullHistory !== -1) {
+                            // Удаляем запись
+                            history.splice(indexInFullHistory, 1);
+                            localStorage.setItem('log-history', JSON.stringify(history));
+                            
+                            // Обновляем отображение
+                            displayHistory();
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Функция для загрузки статистики
+        function loadStats() {
+            displayMonstersStats();
+            displayMoneyStats();
+            displayItemsStats(); // Обновлено для отображения частоты выпадения предметов
+        }
+        
+        // Функция для отображения статистики по монстрам
+        function displayMonstersStats() {
+            const statsContainer = document.getElementById('total-monsters-stats');
+            const totalStats = getTotalMonstersStats();
+            
+            if (Object.keys(totalStats).length === 0) {
+                statsContainer.innerHTML = '<p>Нет данных о монстрах</p>';
+                return;
+            }
+            
+            // Сортируем монстров по количеству убийств (по убыванию)
+            const sortedMonsters = Object.entries(totalStats).sort((a, b) => b[1] - a[1]);
+            
+            let html = '<table class="stats-table">';
+            html += '<tr><th>Монстр</th><th>Количество</th></tr>';
+            
+            for (const [monster, count] of sortedMonsters) {
+                html += `<tr>
+                    <td>
+                        <img src="./images/${monster}.gif" class="item-image" style="width: 30px; height: 30px;" onerror="this.style.display='none'">
+                        ${monster}
+                    </td>
+                    <td>${count}</td>
+                </tr>`;
+            }
+            
+            html += '</table>';
+            
+            // Добавляем общее количество
+            const totalCount = sortedMonsters.reduce((sum, [_, count]) => sum + count, 0);
+            html += `<p style="text-align: center; color: green; font-weight: bold;"><strong>Всего монстров убито:</strong> ${totalCount}</p>`;
+            
+            statsContainer.innerHTML = html;
+        }
+        
+        // Функция для получения общей статистики по монстрам
+        function getTotalMonstersStats() {
+            // Получаем все записи истории
+            const history = JSON.parse(localStorage.getItem('log-history') || '[]');
+            
+            // Фильтруем только записи типа 'attacks'
+            const attackEntries = history.filter(entry => entry.type === 'attacks');
+            
+            // Создаем общую статистику
+            const totalStats = {};
+            
+            // Суммируем все результаты
+            attackEntries.forEach(entry => {
+                for (const [monster, count] of Object.entries(entry.data)) {
+                    totalStats[monster] = (totalStats[monster] || 0) + count;
+                }
+            });
+            
+            return totalStats;
+        }
+        
+        // Функция для отображения статистики по деньгам
+        function displayMoneyStats() {
+            const statsContainer = document.getElementById('total-money-stats');
+            const totalCopper = getTotalMoneyStats();
+            
+            if (totalCopper === 0) {
+                statsContainer.innerHTML = '<p>Нет данных о деньгах</p>';
+                return;
+            }
+            
+            // Преобразуем медь в золото, серебро и медь
+            const gold = Math.floor(totalCopper / 10000);
+            const remainder = totalCopper % 10000;
+            const silver = Math.floor(remainder / 100);
+            const copper = remainder % 100;
+            
+            let html = `<p style="text-align: center; color: #28a745; font-weight: bold; margin-bottom: 15px;"><strong>Всего заработано:</strong></p>`;
+            html += `<div class="money-total" style="text-align: center;">
+                ${gold} <img src="./images/1.svg" class="coin" alt="золото">, 
+                ${silver} <img src="./images/2.svg" class="coin" alt="серебро">, 
+                ${copper} <img src="./images/3.svg" class="coin" alt="медь">
+            </div>`;
+            
+            statsContainer.innerHTML = html;
+        }
+        
+        // Функция для получения общей статистики по деньгам
+        function getTotalMoneyStats() {
+            // Получаем все записи истории
+            const history = JSON.parse(localStorage.getItem('log-history') || '[]');
+            
+            // Фильтруем только записи типа 'money'
+            const moneyEntries = history.filter(entry => entry.type === 'money');
+            
+            // Счетчик для общей суммы меди
+            let totalCopper = 0;
+            
+            // Суммируем все результаты
+            moneyEntries.forEach(entry => {
+                const totalMatch = entry.data.match(/Итого: (\d+) .+?, (\d+) .+?, (\d+)/);
+                if (totalMatch) {
+                    const gold = parseInt(totalMatch[1]) || 0;
+                    const silver = parseInt(totalMatch[2]) || 0;
+                    const copper = parseInt(totalMatch[3]) || 0;
+                    totalCopper += gold * 10000 + silver * 100 + copper;
+                }
+            });
+            
+            return totalCopper;
+        }
+        
+        // Функция для отображения статистики по предметам
+        function displayItemsStats() {
+            const statsContainer = document.getElementById('total-items-stats');
+            const frequencyStats = getTotalItemsStatsWithFrequency();
+            
+            if (Object.keys(frequencyStats).length === 0) {
+                statsContainer.innerHTML = '<p>Нет данных о предметах</p>';
+                return;
+            }
+            
+            // Сортируем предметы по количеству выпадений (по убыванию)
+            const sortedItems = Object.entries(frequencyStats).sort((a, b) => b[1].count - a[1].count);
+            
+            let html = '<table class="stats-table">';
+            html += '<tr><th>Предмет</th><th>Количество выпадений</th><th>Частота (%)</th></tr>';
+            
+            for (const [item, data] of sortedItems) {
+                html += `<tr>
+                    <td>
+                        <img src="./images/${item}.gif" class="item-image" style="width: 30px; height: 30px;" onerror="this.style.display='none'">
+                        ${item}
+                    </td>
+                    <td>${data.count}</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span>${data.frequency}%</span>
+                            <div class="drop-progress" style="flex: 1; max-width: 100px;">
+                                <div class="drop-progress-fill" style="width: ${data.frequency}%;"></div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>`;
+            }
+            
+            html += '</table>';
+            
+            // Добавляем общее количество
+            const totalCount = Object.values(frequencyStats).reduce((sum, data) => sum + data.count, 0);
+            html += `<p style="text-align: center; color: green; font-weight: bold;"><strong>Всего предметов собрано:</strong> ${totalCount}</p>`;
+            
+            statsContainer.innerHTML = html;
+        }
+
+        // Функция для получения общей статистики по предметам с частотой
+        function getTotalItemsStatsWithFrequency() {
+            // Получаем все записи истории
+            const history = JSON.parse(localStorage.getItem('log-history') || '[]');
+            
+            // Фильтруем только записи типа 'items'
+            const itemEntries = history.filter(entry => entry.type === 'items');
+            
+            // Создаем общую статистику
+            const totalStats = {};
+            
+            // Суммируем все результаты
+            itemEntries.forEach(entry => {
+                for (const [item, count] of Object.entries(entry.data)) {
+                    totalStats[item] = (totalStats[item] || 0) + count;
+                }
+            });
+            
+            // Вычисляем общее количество выпадений
+            const totalCount = Object.values(totalStats).reduce((sum, count) => sum + count, 0);
+            
+            // Создаем объект для хранения частоты
+            const frequencyStats = {};
+            
+            // Вычисляем частоту для каждого предмета
+            for (const [item, count] of Object.entries(totalStats)) {
+                frequencyStats[item] = {
+                    count: count,
+                    frequency: ((count / totalCount) * 100).toFixed(2) // Форматируем до двух знаков после запятой
+                };
+            }
+            
+            return frequencyStats;
+        }
+        
+        // Функция для очистки всей статистики
+        function clearAllStats() {
+            if (confirm('Вы уверены, что хотите сбросить всю статистику? Это действие нельзя отменить.')) {
+                localStorage.removeItem('log-history');
+                localStorage.removeItem('attack-records');
+                localStorage.removeItem('money-record');
+                
+                // Обновляем отображение
+                loadRecords();
+                loadHistory();
+                loadStats();
+                
+                alert('Вся статистика успешно сброшена.');
+            }
+        }
+
+        // Функция для вставки текста из буфера обмена
+        function insertLog() {
+            navigator.clipboard.readText().then(text => {
+                const textarea = document.getElementById('logInput');
+                textarea.value = text;
+                textarea.focus();
+            }).catch(err => {
+                console.error('Не удалось прочитать буфер обмена:', err);
+                alert('Не удалось вставить текст из буфера обмена. Попробуйте вставить вручную (Ctrl+V).');
+            });
+        }
+
+        // Функция для очистки лога
+        function clearLog() {
+            const textarea = document.getElementById('logInput');
+            textarea.value = '';
+            textarea.focus();
+        }
+
+        // Функция для красивого отображения результатов предметов
+        function displayItemResults(itemCounts) {
+            const resultsDiv = document.getElementById('results');
+            
+            // Подсчитываем общее количество предметов
+            const totalItems = Object.values(itemCounts).reduce((sum, count) => sum + count, 0);
+            const uniqueItems = Object.keys(itemCounts).length;
+            
+            // Функция для выбора иконки предмета
+            function getItemIcon(itemName) {
+                const name = itemName.toLowerCase();
+                if (name.includes('меч') || name.includes('клинок') || name.includes('лезвие')) return 'fas fa-sword';
+                if (name.includes('щит') || name.includes('тарг')) return 'fas fa-shield-alt';
+                if (name.includes('шлем') || name.includes('каска')) return 'fas fa-hard-hat';
+                if (name.includes('доспех') || name.includes('броня') || name.includes('кольчуга')) return 'fas fa-vest';
+                if (name.includes('кольцо') || name.includes('перстень')) return 'fas fa-ring';
+                if (name.includes('эликсир') || name.includes('зелье') || name.includes('настойка')) return 'fas fa-flask';
+                if (name.includes('монета') || name.includes('золот') || name.includes('серебр') || name.includes('медь')) return 'fas fa-coins';
+                if (name.includes('камень') || name.includes('руда') || name.includes('кристалл')) return 'fas fa-gem';
+                if (name.includes('книга') || name.includes('свиток') || name.includes('том')) return 'fas fa-book';
+                if (name.includes('сумка') || name.includes('мешок') || name.includes('рюкзак')) return 'fas fa-shopping-bag';
+                if (name.includes('лук') || name.includes('арбалет')) return 'fas fa-bow-arrow';
+                if (name.includes('посох') || name.includes('жезл')) return 'fas fa-magic';
+                return 'fas fa-cube'; // Иконка по умолчанию
+            }
+            
+            let html = `
+                <h2 style="font-weight: bold; color: var(--primary-color); margin-bottom: 20px;">
+                    <i class="fas fa-search"></i> Результаты поиска предметов
+                </h2>
+                <div class="results-summary">
+                    <div class="summary-text">
+                        Найдено: ${totalItems} предметов (${uniqueItems} уникальных)
+                    </div>
+                </div>
+                <div class="items-grid">
+            `;
+            
+            // Сортируем предметы по количеству (по убыванию)
+            const sortedItems = Object.entries(itemCounts).sort((a, b) => b[1] - a[1]);
+            
+            sortedItems.forEach(([itemName, count]) => {
+                const icon = getItemIcon(itemName);
+                html += `
+                    <div class="item-card">
+                        <div class="item-icon">
+                            <img src="./images/${itemName}.gif" class="item-image" alt="${itemName}" 
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" 
+                                 style="width: 40px; height: 40px; border-radius: 50%;">
+                            <i class="${icon}" style="display: none;"></i>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-name">${itemName}</div>
+                            <div class="item-count">${count} шт.</div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            resultsDiv.innerHTML = html;
+            
+            // Добавляем в историю
+            addHistoryEntry('items', itemCounts);
+        }
+
+        // === ФУНКЦИИ ДЛЯ РАБОТЫ С ДРОПОМ ===
+
+        // Функция добавления нового предмета с ценой
+        function addDropItem() {
+            const nameInput = document.getElementById('dropItemName');
+            const goldInput = document.getElementById('dropItemGold');
+            const silverInput = document.getElementById('dropItemSilver');
+            const copperInput = document.getElementById('dropItemCopper');
+            
+            const name = nameInput.value.trim();
+            const gold = parseInt(goldInput.value) || 0;
+            const silver = parseInt(silverInput.value) || 0;
+            const copper = parseInt(copperInput.value) || 0;
+            
+            if (!name) {
+                alert('Введите название предмета');
+                return;
+            }
+            
+            if (gold === 0 && silver === 0 && copper === 0) {
+                alert('Введите цену предмета');
+                return;
+            }
+            
+            // Конвертируем все в серебро для хранения (как в оригинальной системе)
+            const totalSilver = gold * 100 + silver + copper / 100;
+            
+            const dropItems = getDropItems();
+            dropItems[name] = {
+                gold: gold,
+                silver: silver,
+                copper: copper,
+                totalSilver: totalSilver
+            };
+            saveDropItems(dropItems);
+            
+            nameInput.value = '';
+            goldInput.value = '0';
+            silverInput.value = '0';
+            copperInput.value = '0';
+            
+            loadDropItems();
+        }
+
+        // Функция загрузки списка предметов с ценами
+        function loadDropItems() {
+            const dropItems = getDropItems();
+            const container = document.getElementById('dropItemsList');
+            
+            if (Object.keys(dropItems).length === 0) {
+                container.innerHTML = '<div class="no-drop-data">Нет добавленных предметов</div>';
+                return;
+            }
+            
+            let html = '';
+            Object.entries(dropItems).forEach(([name, priceData]) => {
+                // Обрабатываем старый формат (только число) и новый формат (объект)
+                const price = typeof priceData === 'number' ? 
+                    {gold: 0, silver: Math.floor(priceData), copper: Math.round((priceData % 1) * 100), totalSilver: priceData} : 
+                    priceData;
+                
+                html += `
+                    <div class="drop-item" data-item="${name}">
+                        <div class="drop-item-info">
+                            <img src="./images/${name}.gif" class="item-image" style="width: 40px; height: 40px;" onerror="this.style.display='none'">
+                            <div class="drop-item-details">
+                                <span class="drop-item-name">${name}</span>
+                                <span class="drop-item-price">${formatDropPrice(price)}</span>
+                            </div>
+                        </div>
+                        <div class="drop-item-actions">
+                            <button class="edit-btn" onclick="editDropItem('${name}')">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="delete-btn" onclick="deleteDropItem('${name}')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <div class="edit-drop-form" id="edit-${name}">
+                            <input type="text" id="edit-name-${name}" value="${name}" placeholder="Название">
+                            <div class="currency-input">
+                                <div class="currency-field">
+                                    <img src="./images/1.svg" class="coin" alt="Золото">
+                                    <input type="number" id="edit-gold-${name}" value="${price.gold || 0}" min="0">
+                                </div>
+                                <div class="currency-field">
+                                    <img src="./images/2.svg" class="coin" alt="Серебро">
+                                    <input type="number" id="edit-silver-${name}" value="${price.silver || 0}" min="0">
+                                </div>
+                                <div class="currency-field">
+                                    <img src="./images/3.svg" class="coin" alt="Медь">
+                                    <input type="number" id="edit-copper-${name}" value="${price.copper || 0}" min="0">
+                                </div>
+                            </div>
+                            <button onclick="saveDropItemEdit('${name}')">Сохранить</button>
+                            <button onclick="cancelDropItemEdit('${name}')">Отмена</button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // Функция редактирования предмета
+        function editDropItem(itemName) {
+            const editForm = document.getElementById(`edit-${itemName}`);
+            editForm.style.display = editForm.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Функция сохранения изменений предмета
+        function saveDropItemEdit(oldName) {
+            const newName = document.getElementById(`edit-name-${oldName}`).value.trim();
+            const gold = parseInt(document.getElementById(`edit-gold-${oldName}`).value) || 0;
+            const silver = parseInt(document.getElementById(`edit-silver-${oldName}`).value) || 0;
+            const copper = parseInt(document.getElementById(`edit-copper-${oldName}`).value) || 0;
+            
+            if (!newName) {
+                alert('Введите название предмета');
+                return;
+            }
+            
+            if (gold === 0 && silver === 0 && copper === 0) {
+                alert('Введите цену предмета');
+                return;
+            }
+            
+            const totalSilver = gold * 100 + silver + copper / 100;
+            
+            const dropItems = getDropItems();
+            
+            // Удаляем старую запись
+            delete dropItems[oldName];
+            // Добавляем новую
+            dropItems[newName] = {
+                gold: gold,
+                silver: silver,
+                copper: copper,
+                totalSilver: totalSilver
+            };
+            
+            saveDropItems(dropItems);
+            loadDropItems();
+        }
+
+        // Функция отмены редактирования
+        function cancelDropItemEdit(itemName) {
+            const editForm = document.getElementById(`edit-${itemName}`);
+            editForm.style.display = 'none';
+        }
+
+        // Функция удаления предмета
+        function deleteDropItem(itemName) {
+            if (confirm(`Удалить предмет "${itemName}"?`)) {
+                const dropItems = getDropItems();
+                delete dropItems[itemName];
+                saveDropItems(dropItems);
+                loadDropItems();
+            }
+        }
+
+        // Функция анализа дропа из лога
+        function analyzeDrop() {
+            const logInput = document.getElementById('logInput').value;
+            const dropItems = getDropItems();
+            
+            if (Object.keys(dropItems).length === 0) {
+                alert('Сначала добавьте предметы с ценами');
+                return;
+            }
+            
+            if (!logInput.trim()) {
+                alert('Введите лог для анализа');
+                return;
+            }
+            
+            const foundItems = {};
+            const logLines = logInput.split('\n');
+            
+            // Анализируем каждую строку лога
+            logLines.forEach(line => {
+                Object.keys(dropItems).forEach(itemName => {
+                    // Экранируем специальные символы
+                    const escapedItem = itemName.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                    // Ищем предмет с количеством
+                    const itemRegex = new RegExp(`${escapedItem}\\s+(\\d+)\\s+шт`, 'g');
+                    
+                    let match;
+                    while ((match = itemRegex.exec(line)) !== null) {
+                        const quantity = parseInt(match[1]) || 1;
+                        foundItems[itemName] = (foundItems[itemName] || 0) + quantity;
+                    }
+                });
+            });
+            
+            if (Object.keys(foundItems).length === 0) {
+                document.getElementById('dropResults').innerHTML = 
+                    '<div class="no-drop-data">В логе не найдено предметов из списка</div>';
+                return;
+            }
+            
+            // Сохраняем результаты в статистику
+            saveDropAnalysis(foundItems, dropItems);
+            
+            // Отображаем результаты
+            displayDropResults(foundItems, dropItems);
+            
+            // Подсчитываем общую стоимость дропа и добавляем к общей прибыли
+            let totalDropValue = 0;
+            Object.keys(foundItems).forEach(itemName => {
+                const quantity = foundItems[itemName];
+                const price = dropItems[itemName];
+                totalDropValue += calculateTotalCopperFromPrice(price) * quantity;
+            });
+            addToTotalProfit(totalDropValue, 'drop');
+            
+            // Обновляем общую статистику
+            loadDropStats();
+        }
+
+        // Функция форматирования цены дропа с картинками монет
+        function formatDropPrice(priceData) {
+            if (typeof priceData === 'number') {
+                // Старый формат - конвертируем
+                const gold = Math.floor(priceData / 100);
+                const silver = Math.floor(priceData % 100);
+                const copper = Math.round((priceData % 1) * 100);
+                priceData = {gold, silver, copper};
+            }
+            
+            let result = '';
+            if (priceData.gold > 0) {
+                result += `<img src="./images/1.svg" class="coin" alt="Золото">${priceData.gold} `;
+            }
+            if (priceData.silver > 0) {
+                result += `<img src="./images/2.svg" class="coin" alt="Серебро">${priceData.silver} `;
+            }
+            if (priceData.copper > 0) {
+                result += `<img src="./images/3.svg" class="coin" alt="Медь">${priceData.copper} `;
+            }
+            
+            return result || '<img src="./images/3.svg" class="coin" alt="Медь">0';
+        }
+
+        // Функция отображения результатов анализа
+        function displayDropResults(foundItems, dropItems) {
+            const container = document.getElementById('dropResults');
+            
+            let totalValueSilver = 0;
+            let totalItems = 0;
+            
+            // Подсчитываем общую стоимость
+            Object.entries(foundItems).forEach(([item, count]) => {
+                const priceData = dropItems[item];
+                if (priceData) {
+                    const itemTotalSilver = typeof priceData === 'number' ? priceData : priceData.totalSilver;
+                    totalValueSilver += count * itemTotalSilver;
+                }
+                totalItems += count;
+            });
+            
+            let html = `
+                <div class="drop-summary">
+                    <div class="drop-summary-text">
+                        Найдено предметов: ${totalItems} шт. | 
+                        Общая стоимость: ${formatPrice(totalValueSilver)}
+                    </div>
+                </div>
+                <div class="drop-results-list">
+            `;
+            
+            // Сортируем по стоимости (убывание)
+            const sortedItems = Object.entries(foundItems).sort((a, b) => {
+                const priceDataA = dropItems[a[0]];
+                const priceDataB = dropItems[b[0]];
+                const valueA = priceDataA ? a[1] * (typeof priceDataA === 'number' ? priceDataA : priceDataA.totalSilver) : 0;
+                const valueB = priceDataB ? b[1] * (typeof priceDataB === 'number' ? priceDataB : priceDataB.totalSilver) : 0;
+                return valueB - valueA;
+            });
+            
+            sortedItems.forEach(([item, count]) => {
+                const priceData = dropItems[item];
+                const itemTotalSilver = priceData ? (typeof priceData === 'number' ? priceData : priceData.totalSilver) : 0;
+                const itemValue = count * itemTotalSilver;
+                const percentage = totalValueSilver > 0 ? (itemValue / totalValueSilver * 100).toFixed(1) : 0;
+                
+                html += `
+                    <div class="drop-stats-item">
+                        <div class="drop-stats-info">
+                            <img src="./images/${item}.gif" class="item-image" style="width: 40px; height: 40px;" onerror="this.style.display='none'">
+                            <span class="drop-stats-name">${item}</span>
+                            <span class="drop-stats-count">${count} шт.</span>
+                            <span class="drop-stats-value">${formatPrice(itemValue)}</span>
+                            <span class="drop-stats-percent">${percentage}%</span>
+                        </div>
+                        <div class="drop-progress-bar">
+                            <div class="drop-progress">
+                                <div class="drop-progress-fill" style="width: ${percentage}%">${percentage}%</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        // Функция сохранения результатов анализа в статистику
+        function saveDropAnalysis(foundItems, dropItems) {
+            const stats = getDropStats();
+            const timestamp = new Date().toISOString();
+            
+            Object.entries(foundItems).forEach(([item, count]) => {
+                const priceData = dropItems[item];
+                const itemTotalSilver = priceData ? (typeof priceData === 'number' ? priceData : priceData.totalSilver) : 0;
+                
+                if (!stats[item]) {
+                    stats[item] = {
+                        totalCount: 0,
+                        totalValue: 0,
+                        price: priceData || {gold: 0, silver: 0, copper: 0, totalSilver: 0},
+                        analyses: []
+                    };
+                }
+                
+                stats[item].totalCount += count;
+                stats[item].totalValue += count * itemTotalSilver;
+                stats[item].price = priceData || {gold: 0, silver: 0, copper: 0, totalSilver: 0}; // Обновляем цену
+                stats[item].analyses.push({
+                    date: timestamp,
+                    count: count,
+                    value: count * itemTotalSilver
+                });
+            });
+            
+            saveDropStats(stats);
+        }
+
+        // Функция загрузки статистики дропа
+        function loadDropStats() {
+            const stats = getDropStats();
+            const container = document.getElementById('total-drop-stats');
+            
+            if (Object.keys(stats).length === 0) {
+                container.innerHTML = '<p>Нет данных по дропу</p>';
+                return;
+            }
+            
+            let totalValue = 0;
+            let totalItems = 0;
+            
+            Object.values(stats).forEach(item => {
+                totalValue += item.totalValue;
+                totalItems += item.totalCount;
+            });
+            
+            let html = `
+                <div class="drop-summary">
+                    <div class="drop-summary-text">
+                        Всего проанализировано: ${totalItems} предметов<br>
+                        Общая стоимость: ${formatPrice(totalValue)}
+                    </div>
+                </div>
+            `;
+            
+            // Сортируем по общей стоимости
+            const sortedStats = Object.entries(stats).sort((a, b) => b[1].totalValue - a[1].totalValue);
+            
+            sortedStats.forEach(([item, data]) => {
+                const percentage = totalValue > 0 ? (data.totalValue / totalValue * 100) : 0;
+                const displayPercentage = percentage.toFixed(2); // Показываем с точностью до 2 знаков
+                
+                // Улучшенная логика для отображения процентов
+                let barWidth = Math.max(percentage, 5); // Минимальная ширина 5% для видимости
+                if (percentage < 3) {
+                    barWidth = Math.max(percentage * 3, 10); // Увеличиваем мелкие проценты
+                }
+                
+                html += `
+                    <div class="drop-stats-item">
+                        <div class="drop-stats-info">
+                            <img src="./images/${item}.gif" class="item-image" style="width: 40px; height: 40px;" onerror="this.style.display='none'">
+                            <span class="drop-stats-name">${item}</span>
+                            <span class="drop-stats-count">${data.totalCount} шт.</span>
+                            <span class="drop-stats-value">${formatPrice(data.totalValue)}</span>
+                            <span class="drop-stats-percent">${displayPercentage}%</span>
+                        </div>
+                        <div class="drop-progress-bar" style="position: relative; width: 60%;">
+                            <div class="drop-progress">
+                                <div class="drop-progress-fill" style="width: ${barWidth}%; min-width: 10px; position: relative;">
+                                    <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 11px; color: white; font-weight: bold; text-shadow: 1px 1px 1px rgba(0,0,0,0.5);">${displayPercentage}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // Функция экспорта данных о дропе
+        function exportDropData() {
+            const dropItems = getDropItems();
+            const dropStats = getDropStats();
+            
+            const exportData = {
+                items: dropItems,
+                statistics: dropStats,
+                exportDate: new Date().toISOString(),
+                version: "1.0"
+            };
+            
+            const dataStr = JSON.stringify(exportData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            link.download = `drop_data_${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+        }
+
+        // Функция импорта данных о дропе
+        function importDropData(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const importData = JSON.parse(e.target.result);
+                    
+                    if (importData.items) {
+                        if (confirm('Заменить существующие предметы импортированными?')) {
+                            saveDropItems(importData.items);
+                            loadDropItems();
+                        }
+                    }
+                    
+                    if (importData.statistics) {
+                        if (confirm('Заменить существующую статистику импортированной?')) {
+                            saveDropStats(importData.statistics);
+                            loadDropStats();
+                        }
+                    }
+                    
+                    alert('Данные успешно импортированы!');
+                } catch (error) {
+                    alert('Ошибка при импорте данных: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+            
+            // Очистка input для возможности повторного выбора того же файла
+            event.target.value = '';
+        }
+
+        // Функция очистки всех данных о дропе
+        function clearDropData() {
+            if (confirm('Удалить все данные о дропе (предметы, цены и статистику)?')) {
+                localStorage.removeItem('dropItems');
+                localStorage.removeItem('dropStats');
+                loadDropItems();
+                loadDropStats();
+                document.getElementById('dropResults').innerHTML = '';
+            }
+        }
+
+        // Вспомогательные функции для работы с localStorage
+        function getDropItems() {
+            return JSON.parse(localStorage.getItem('dropItems') || '{}');
+        }
+
+        function saveDropItems(items) {
+            localStorage.setItem('dropItems', JSON.stringify(items));
+        }
+
+        function getDropStats() {
+            return JSON.parse(localStorage.getItem('dropStats') || '{}');
+        }
+
+        function saveDropStats(stats) {
+            localStorage.setItem('dropStats', JSON.stringify(stats));
+        }
+
+        // Функция форматирования цены в золото/серебро/медь
+        function formatPrice(silverAmount) {
+            const gold = Math.floor(silverAmount / 100);
+            const silver = Math.floor(silverAmount % 100);
+            const copper = Math.round((silverAmount % 1) * 100);
+            
+            let result = '';
+            if (gold > 0) {
+                result += `<img src="./images/1.svg" class="coin" alt="Золото">${gold} `;
+            }
+            if (silver > 0) {
+                result += `<img src="./images/2.svg" class="coin" alt="Серебро">${silver} `;
+            }
+            if (copper > 0) {
+                result += `<img src="./images/3.svg" class="coin" alt="Медь">${copper} `;
+            }
+            
+            if (result === '') {
+                result = '<img src="./images/3.svg" class="coin" alt="Медь">0';
+            }
+            
+            return result;
+        }
+
+        // Обновляем функцию clearAllStats для включения статистики дропа
+        function clearAllStats() {
+            if (confirm('Удалить всю статистику (монстры, деньги, предметы, дроп и общая прибыль)?')) {
+                localStorage.removeItem('monsterStats');
+                localStorage.removeItem('moneyStats');
+                localStorage.removeItem('itemStats');
+                localStorage.removeItem('dropStats');
+                localStorage.removeItem('totalProfitGold');
+                localStorage.removeItem('totalProfitSilver');
+                localStorage.removeItem('totalProfitCopper');
+                localStorage.removeItem('totalAnalyses');
+                loadStats();
+                loadDropStats();
+                updateTotalProfitDisplay();
+            }
+        }
+
+        // === ФУНКЦИИ ДЛЯ РАБОТЫ С ОБЩЕЙ ПРИБЫЛЬЮ ===
+        
+        // Функция добавления прибыли к общей статистике (принимает медные монеты и тип операции)
+        function addToTotalProfit(copperAmount, operationType = 'general') {
+            if (copperAmount <= 0) return; // Не добавляем нулевые или отрицательные значения
+            
+            // Конвертируем медные монеты в золото, серебро, медь
+            const gold = Math.floor(copperAmount / 10000);
+            const remainder = copperAmount % 10000;
+            const silver = Math.floor(remainder / 100);
+            const copper = remainder % 100;
+            
+            // Добавляем к общим значениям
+            let totalGold = parseInt(localStorage.getItem('totalProfitGold') || '0');
+            let totalSilver = parseInt(localStorage.getItem('totalProfitSilver') || '0');
+            let totalCopper = parseInt(localStorage.getItem('totalProfitCopper') || '0');
+            let analysesCount = parseInt(localStorage.getItem('totalAnalyses') || '0');
+            
+            // Добавляем к раздельным статистикам в зависимости от типа операции
+            if (operationType === 'monster') {
+                let monsterGold = parseInt(localStorage.getItem('monsterProfitGold') || '0');
+                let monsterSilver = parseInt(localStorage.getItem('monsterProfitSilver') || '0');
+                let monsterCopper = parseInt(localStorage.getItem('monsterProfitCopper') || '0');
+                
+                monsterGold += gold;
+                monsterSilver += silver;
+                monsterCopper += copper;
+                
+                // Нормализуем валюту для монстров
+                if (monsterCopper >= 100) {
+                    monsterSilver += Math.floor(monsterCopper / 100);
+                    monsterCopper = monsterCopper % 100;
+                }
+                if (monsterSilver >= 100) {
+                    monsterGold += Math.floor(monsterSilver / 100);
+                    monsterSilver = monsterSilver % 100;
+                }
+                
+                localStorage.setItem('monsterProfitGold', monsterGold.toString());
+                localStorage.setItem('monsterProfitSilver', monsterSilver.toString());
+                localStorage.setItem('monsterProfitCopper', monsterCopper.toString());
+                
+            } else if (operationType === 'drop') {
+                let dropGold = parseInt(localStorage.getItem('dropProfitGold') || '0');
+                let dropSilver = parseInt(localStorage.getItem('dropProfitSilver') || '0');
+                let dropCopper = parseInt(localStorage.getItem('dropProfitCopper') || '0');
+                
+                dropGold += gold;
+                dropSilver += silver;
+                dropCopper += copper;
+                
+                // Нормализуем валюту для дропа
+                if (dropCopper >= 100) {
+                    dropSilver += Math.floor(dropCopper / 100);
+                    dropCopper = dropCopper % 100;
+                }
+                if (dropSilver >= 100) {
+                    dropGold += Math.floor(dropSilver / 100);
+                    dropSilver = dropSilver % 100;
+                }
+                
+                localStorage.setItem('dropProfitGold', dropGold.toString());
+                localStorage.setItem('dropProfitSilver', dropSilver.toString());
+                localStorage.setItem('dropProfitCopper', dropCopper.toString());
+            }
+            
+            totalGold += gold;
+            totalSilver += silver;
+            totalCopper += copper;
+            analysesCount += 1;
+            
+            // Нормализуем общую валюту
+            if (totalCopper >= 100) {
+                totalSilver += Math.floor(totalCopper / 100);
+                totalCopper = totalCopper % 100;
+            }
+            if (totalSilver >= 100) {
+                totalGold += Math.floor(totalSilver / 100);
+                totalSilver = totalSilver % 100;
+            }
+            
+            localStorage.setItem('totalProfitGold', totalGold.toString());
+            localStorage.setItem('totalProfitSilver', totalSilver.toString());
+            localStorage.setItem('totalProfitCopper', totalCopper.toString());
+            localStorage.setItem('totalAnalyses', analysesCount.toString());
+            
+            // Логирование для отладки
+            console.log(`Добавлено к общей прибыли (${operationType}): ${gold}з ${silver}с ${copper}м`);
+            
+            updateTotalProfitDisplay();
+        }
+        
+        // Функция обновления отображения общей прибыли
+        function updateTotalProfitDisplay() {
+            const totalProfitGold = parseInt(localStorage.getItem('totalProfitGold') || '0');
+            const totalProfitSilver = parseInt(localStorage.getItem('totalProfitSilver') || '0');
+            const totalProfitCopper = parseInt(localStorage.getItem('totalProfitCopper') || '0');
+            
+            // Получаем раздельную статистику
+            const monsterGold = parseInt(localStorage.getItem('monsterProfitGold') || '0');
+            const monsterSilver = parseInt(localStorage.getItem('monsterProfitSilver') || '0');
+            const monsterCopper = parseInt(localStorage.getItem('monsterProfitCopper') || '0');
+            
+            const dropGold = parseInt(localStorage.getItem('dropProfitGold') || '0');
+            const dropSilver = parseInt(localStorage.getItem('dropProfitSilver') || '0');
+            const dropCopper = parseInt(localStorage.getItem('dropProfitCopper') || '0');
+            
+            // Обновляем отображение раздельной статистики
+            document.getElementById('monster-profit-amount').innerHTML = formatCurrencyDisplay(monsterGold, monsterSilver, monsterCopper);
+            document.getElementById('drop-profit-amount').innerHTML = formatCurrencyDisplay(dropGold, dropSilver, dropCopper);
+            
+            // Обновляем красивое отображение общего дохода
+            document.getElementById('total-gold-amount').textContent = totalProfitGold;
+            document.getElementById('total-silver-amount').textContent = totalProfitSilver;
+            document.getElementById('total-copper-amount').textContent = totalProfitCopper;
+            
+            // Больше не нужно скрывать блоки, так как теперь используется новый дизайн
+            // Все элементы всегда видны в новом горизонтальном layout
+        }
+        
+        // Функция форматирования валюты для отображения
+        function formatCurrencyDisplay(gold, silver, copper) {
+            let result = '';
+            if (gold > 0) result += `${gold} <img src="./images/1.svg" class="coin" alt="Золото">`;
+            if (silver > 0) result += ` ${silver} <img src="./images/2.svg" class="coin" alt="Серебро">`;
+            if (copper > 0) result += ` ${copper} <img src="./images/3.svg" class="coin" alt="Медь">`;
+            return result || '0 <img src="./images/3.svg" class="coin" alt="Медь">';
+        }
+        
+        // Функция сброса статистики общей прибыли
+        function resetTotalProfit() {
+            if (confirm('Вы уверены, что хотите сбросить статистику общей прибыли?')) {
+                localStorage.removeItem('totalProfitGold');
+                localStorage.removeItem('totalProfitSilver');
+                localStorage.removeItem('totalProfitCopper');
+                localStorage.removeItem('monsterProfitGold');
+                localStorage.removeItem('monsterProfitSilver');
+                localStorage.removeItem('monsterProfitCopper');
+                localStorage.removeItem('dropProfitGold');
+                localStorage.removeItem('dropProfitSilver');
+                localStorage.removeItem('dropProfitCopper');
+                localStorage.removeItem('totalAnalyses');
+                updateTotalProfitDisplay();
+                alert('Статистика общей прибыли сброшена.');
+            }
+        }
+        
+        // Функция конвертации цены в медные монеты
+        function calculateTotalCopperFromPrice(price) {
+            let totalCopper = 0;
+            if (price.gold) totalCopper += price.gold * 10000;
+            if (price.silver) totalCopper += price.silver * 100;
+            if (price.copper) totalCopper += price.copper;
+            return totalCopper;
+        }
+    </script>
+</body>
+</html>
